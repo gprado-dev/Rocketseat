@@ -1,0 +1,114 @@
+/* reset */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* fonts */
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.sans {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* colors */
+:root {
+  --blue: #2F2E41;
+  --green: #00BFA6;
+  --gray: #C2C2C2;
+  --white: #FFFFFF;
+}
+
+/* global */
+body {
+  background-color: var(--blue);
+}
+
+.container {
+  width: 1092px;
+  margin: 32px auto 0;
+}
+
+/* menu */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+
+a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 28px;
+  font-weight: 500;
+
+  transition: .3s;
+}
+
+a:hover {
+  color: var(--green);
+}
+
+/* main */
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 96px auto 152px;
+}
+
+section {
+  width: 604px;
+  text-align: center;
+}
+
+h1 {
+  color: var(--white);
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: bold;
+
+  margin-bottom: 56px;
+}
+
+p {
+  color: var(--gray);
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: normal;
+}
+
+span {
+  color: var(--green);
+}
+
+/* footer */
+footer {
+  width: 568px;
+  border-top: 1px solid var(--green);
+  margin: auto;
+  padding: 24px 0;
+
+  color: var(--white);
+  text-align: center;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.decorative {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 24px;
+}

@@ -1,0 +1,254 @@
+/* settings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-size: 62.5%; /* 10px */
+  font-family: 'Mulish', sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
+  background: var(--color-background);
+
+  padding: 72px 104px;
+
+  display: grid;
+  justify-content: center;
+}
+
+/* colors */
+html {
+  --color-brand-primary: #42D3FF;
+  --color-neutral-light: #E1E1E6;
+  --color-neutral-medium: #C4C4CC;
+  --color-neutral-dark: #323238;
+  --color-neutral-darkest: #202024;
+  --color-background: #121214;
+}
+
+/* header */
+main img {
+  width: 100%;
+}
+
+header h1 {
+  color: var(--color-brand-primary);
+  font-size: 3.6rem;
+  font-weight: 900;
+
+}
+
+header p {
+  color: var(--color-neutral-light);
+  font-size: 2.4rem;
+  font-weight: 600;
+
+  margin: 8px 0 62px;
+}
+
+
+/* main */
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px 64px;
+  /* place-content: center; */
+}
+
+.card {
+  background: var(--color-neutral-darkest);
+  border: 2px solid var(--color-neutral-dark);
+  border-radius: 8px;
+  overflow: hidden;
+
+  position: relative;
+}
+
+figcaption {
+  background-color: var(--color-neutral-darkest);
+  z-index: 1;
+  position: relative;
+}
+
+.card img {
+  max-width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card h2 {
+  font-size: 3.2rem;
+  font-weight: 900;
+
+  padding: 24px 32px 0;
+}
+
+.card p {
+  color: var(--color-neutral-medium);
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 2.4rem;
+
+  padding: 24px 32px 32px;
+}
+
+footer {
+  text-align: center;
+  color: var(--color-neutral-medium);
+  margin: 48px 0 0;
+  padding: 8px 0;
+  opacity: 0.5;
+}
+
+/* states */
+footer:hover {
+  color: var(--color-neutral-medium);
+  opacity: 1;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--color-neutral-medium);
+}
+
+footer a:hover, footer:hover a {
+  color: var(--color-brand-primary);
+  text-decoration: underline;
+  filter: drop-shadow(0 0 4px var(--color-brand-primary));
+}
+
+.card, .card p, .card h2, footer, a, .card img {
+  transition: 0.7s ease;
+}
+
+.card:hover {
+  border: 2px solid var(--color-brand-primary);
+  filter: drop-shadow(0 0 8px var(--color-brand-primary));
+  transform: scale(1.05);
+
+  background-color: #22292F;
+}
+
+.card:hover p, .card:hover h2 {
+  color: white;
+  opacity: 1;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+::selection {
+  background-color: var(--color-brand-primary);
+  color: var(--color-background);
+}
+
+/* mobile breakpoint */
+@media (max-width: 425px) {
+  body {
+    padding: 5.6rem 2.4rem;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .card h2 {
+    color: var(--color-neutral-light);
+  }
+
+  .card p {
+    opacity: 1;
+  }
+
+  main:has(.card:hover) .card:not(:hover) {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+/* pre-tablet breakpoint */
+@media (min-width: 426px) {
+  body {
+    padding: 5.6rem 4rem;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .card h2 {
+    color: var(--color-neutral-light);
+  }
+
+  .card p {
+    opacity: 1;
+  }
+
+  main:has(.card:hover) .card:not(:hover) {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+/* tablet breakpoint */
+@media (min-width: 596px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card h2 {
+    color: var(--color-neutral-light);
+  }
+
+  .card p {
+    opacity: 1;
+  }
+}
+
+/* laptop breakpoint */
+@media (min-width: 1024px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1280px;
+  }
+
+  .card h2 {
+    color: var(--color-neutral-medium);
+  }
+
+  .card p {
+    opacity: 0.75;
+  }
+
+  main:has(.card:hover) .card:not(:hover) {
+    filter: blur(2.5px);
+    opacity: .7;
+  }
+}
+
+/* /// animations /// */
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.card {
+  animation: appear 1s;
+  animation-delay: var(--animation-delay); /* criada no html */
+  animation-fill-mode: backwards;
+  animation-timing-function: ease-in-out;
+}
