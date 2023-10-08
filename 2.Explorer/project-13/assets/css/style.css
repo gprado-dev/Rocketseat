@@ -323,7 +323,9 @@ html {
 }
 
 input:hover,
-textarea:hover {
+textarea:hover,
+.input-wrapper a:hover + textarea,
+.input-wrapper a:hover + input {
   background-color: #EDE8EE;
   transition: var(--transition-inputs);
 }
