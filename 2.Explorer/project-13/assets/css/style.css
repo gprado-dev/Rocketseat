@@ -34,6 +34,10 @@ html {
   --color-brand-secondary: #B52184;
 
   --color-gradient-primary: linear-gradient(96deg, #343193 0%, #302C63 99.68%);
+  --color-gradient-secondary: linear-gradient(96deg, #B52184 0%, #B52184 99.68%);
+
+  --color-success-base: #04D361;
+  --color-danger-base: #CC2937;
 
   /* spaces */
   --space-32px: 3.2rem;
@@ -43,7 +47,9 @@ html {
   --grid-max-width: 121.6rem;
 
   /* transitions */
-  --transition-buttons: 400ms;
+  --transition-buttons: 100ms;
+  --transition-inputs: 100ms;
+  --transition-cards: 200ms;
 }
 
 .grid-container {
@@ -185,6 +191,7 @@ SECTION: FORM //////////////////////////////////
 .input-wrapper {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 /* inputs */
@@ -202,39 +209,26 @@ input, textarea {
   border-radius: 1.6rem;
 }
 
-input[type="text"] {
-  background-repeat: no-repeat;
-  background-position: 1.6rem 50%;
-  
-  background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.5926 3.52719C14.6805 2.54234 13.4064 2 12.0001 2C10.5864 2 9.30812 2.53906 8.40015 3.51781C7.48233 4.50734 7.03515 5.85219 7.14015 7.30437C7.34827 10.1694 9.52843 12.5 12.0001 12.5C14.4719 12.5 16.6483 10.1698 16.8597 7.30531C16.9661 5.86625 16.5161 4.52422 15.5926 3.52719Z' fill='%23B52184'/%3E%3Cpath d='M20.2501 23H3.75015C3.53418 23.0028 3.3203 22.9574 3.12407 22.8672C2.92784 22.7769 2.75419 22.6441 2.61577 22.4783C2.31108 22.1141 2.18827 21.6167 2.27921 21.1137C2.67483 18.9191 3.90952 17.0755 5.85015 15.7812C7.57421 14.6323 9.75811 14 12.0001 14C14.2422 14 16.4261 14.6328 18.1501 15.7812C20.0908 17.075 21.3255 18.9186 21.7211 21.1133C21.812 21.6162 21.6892 22.1136 21.3845 22.4778C21.2461 22.6437 21.0725 22.7766 20.8763 22.867C20.6801 22.9573 20.4662 23.0028 20.2501 23Z' fill='%23B52184'/%3E%3C/svg%3E%0A");
+.icon-name, .icon-email {
+  position: absolute;
+  z-index: 1;
+  top: 25%;
+  left: 1.6rem;
 }
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus {
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active
+{
   border: 1.5px solid var(--color-brand-primary);
   -webkit-text-fill-color: var(--color-brand-primary);
   -webkit-box-shadow: 0 0 0px 40rem #F9F4FB inset;
   transition: background-color 5000s ease-in-out 0s;
-}
-
-@-webkit-keyframes autofill-email {
-  to {
-    background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.1528 5.92737C17.6481 4.28674 15.4262 3.41956 12.7262 3.41956C10.3356 3.41956 8.0059 4.34768 6.17309 6.03518C4.34027 7.72268 3.21527 9.96331 3.00434 12.3539C2.7934 14.7774 3.5434 17.0555 5.11371 18.7711C6.67934 20.4774 8.86371 21.4196 11.2731 21.4196C12.7965 21.4196 13.7856 21.3071 15.2809 20.6836C15.6606 20.5242 15.8434 20.0836 15.684 19.7039C15.5246 19.3242 15.084 19.1414 14.7043 19.3008C13.4293 19.8352 12.6512 19.9242 11.2778 19.9242C9.29496 19.9242 7.49965 19.1555 6.22465 17.7633C4.94027 16.3617 4.32621 14.4867 4.50434 12.4899C4.86996 8.31799 8.56371 4.92424 12.7356 4.92424C15.0043 4.92424 16.8418 5.62268 18.0559 6.94456C19.209 8.20549 19.7246 9.94456 19.5465 11.9696C19.3918 13.7227 18.7122 14.5852 18.1731 14.9977C17.6575 15.3914 17.1418 15.4758 16.8606 15.4242C16.0309 15.2789 15.5996 14.4633 15.7075 13.2539L16.1059 8.73987C16.1434 8.32737 15.8387 7.96174 15.4262 7.92893C15.0137 7.89143 14.6481 8.19612 14.6153 8.60862L14.5778 9.03518C13.8653 8.31799 12.9184 7.92424 11.9012 7.92424C10.7856 7.92424 9.72152 8.39768 8.90121 9.25549C8.11371 10.0758 7.62621 11.1821 7.52309 12.3586C7.4059 13.6664 7.79496 14.9039 8.57777 15.7617C9.26215 16.5117 10.209 16.9242 11.245 16.9242C12.3887 16.9242 13.4668 16.5024 14.2778 15.743C14.3903 15.6399 14.4981 15.5274 14.5965 15.4102C15.0606 16.3055 15.8575 16.7696 16.6075 16.9055C17.3996 17.0461 18.3278 16.7789 19.0965 16.193C19.8793 15.593 20.8496 14.3977 21.0512 12.1055C21.2434 9.67268 20.5778 7.48362 19.1528 5.92737ZM11.2262 15.4196C10.6075 15.4196 10.0684 15.1852 9.66527 14.7446C9.16371 14.1961 8.91996 13.3711 8.99965 12.4852C9.14965 10.7649 10.42 9.41956 11.8871 9.41956C12.534 9.41956 13.1293 9.68206 13.57 10.1602C14.0809 10.718 14.3293 11.5149 14.2543 12.3539C14.0668 14.468 12.595 15.4196 11.2262 15.4196Z' fill='%23B52184'/%3E%3C/svg%3E%0A");
-  }
-}
-
-input[type="email"],
-input[type="email"]:autofill,
-input[type="email"]:-webkit-autofill,
-input[type="email"]:-webkit-autofill:hover,
-input[type="email"]:-webkit-autofill:focus,
-input[type="email"]:-webkit-autofill:active
-{
-  background-repeat: no-repeat;
-  background-position: 1.6rem 50%;
-  -webkit-animation-name: autofill-email;
-  -webkit-animation-fill-mode: both;
 }
 
 
@@ -250,7 +244,9 @@ input::placeholder, textarea::placeholder {
 
 /* button */
 .section-form button {
-  background: var(--color-gradient-primary);
+  cursor: pointer;
+
+  background-image: var(--color-gradient-primary);
   border: none;
   border-radius: 1.6rem;
   padding: 1.6rem;
@@ -258,6 +254,29 @@ input::placeholder, textarea::placeholder {
   color: var(--color-base-white);
   font-weight: 700;
   max-width: 15.2rem;
+
+  position: relative;
+  z-index: 1;
+}
+
+.section-form button::before {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  
+  background-color: var(--color-brand-secondary);
+  border-radius: 1.6rem;
+  opacity: 0;
+  
+  transition: opacity var(--transition-buttons) linear;
+}
+
+.section-form button:hover::before {
+  opacity: 1;
 }
 
 
@@ -283,23 +302,54 @@ footer {
 /* ---------------------------------------------
 USER INTERACTIONS //////////////////////////////
 --------------------------------------------- */
+/* scroll */
 html {
   scroll-behavior: smooth;
 }
 
+/* selection */
 ::selection {
   background: var(--color-brand-secondary);
   color: var(--color-base-white);
 }
 
-button:hover {
-  background: var(--color-brand-secondary);
-  transition: var(--transition-buttons);
+/* input feedbacks */
+.section-form form input:focus,
+.section-form form textarea:focus {
+  background-color: #F9F4FB;
+  outline: 2px solid var(--color-brand-secondary);
+  border: 1.5px solid transparent;
+  transition: var(--transition-inputs);
 }
 
-.section-form form input:focus {
-  border: 1.5px solid var(--color-brand-secondary);
+input:hover,
+textarea:hover {
+  background-color: #EDE8EE;
+  transition: var(--transition-inputs);
 }
+
+.validation {
+  position: absolute;
+  top: 105%;
+  left: 1%;
+  opacity: 0;
+  font-size: 12px;
+  color: var(--color-danger-base);
+  transition: opacity;
+}
+
+input:required:valid {
+  border: 1.5px solid var(--color-success-base);
+}
+
+input:required:invalid:not(:placeholder-shown) {
+  border: 1.5px solid var(--color-danger-base);
+}
+
+input:required:invalid:not(:placeholder-shown) + .validation {
+  opacity: 1;
+}
+
 
 /* ---------------------------------------------
 RESPONSIVENESS /////////////////////////////////
@@ -324,10 +374,10 @@ RESPONSIVENESS /////////////////////////////////
   .hero-img {
     margin-bottom: 9.6rem;
   }
-}
 
-.section-form > div {
-  padding-inline: 0;
+  .section-form > div {
+    padding-inline: 2.4rem;
+  }
 }
 
 /* /// Laptop /// */
@@ -361,4 +411,48 @@ RESPONSIVENESS /////////////////////////////////
     background-position: top right;
     background-size: contain;
   }
+}
+
+
+/* ---------------------------------------------
+ANIMATIONS /////////////////////////////////////
+--------------------------------------------- */
+/* card hover animation */
+.card {
+  transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+  padding-block: 3rem;
+  box-shadow: 0px 18px 36px -18px rgba(0,0,0,0.5),
+  0px 30px 45px -30px rgba(50,50,93,0.65);
+  outline: .4rem solid var(--color-brand-secondary);
+  
+  transition: all var(--transition-cards) ease-in-out;
+}
+
+.card img {
+  height: 92px;
+  transition: all var(--transition-cards) ease-in-out;
+}
+
+.card:hover img {
+  height: 80px;
+  transition: all var(--transition-cards) ease-in-out;
+}
+
+/* scroll button */
+@keyframes arrow {
+  0% { transform: translate(0, 8px) }
+  50% { transform: translate(0, 0) }
+  100% { transform: translate(0, 0) }
+}
+
+.scroll-button:hover .arrow {
+  animation-name: arrow;
+  animation-timing-function: linear;
+  animation-duration: 600ms;
+  animation-fill-mode: initial;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;
 }
