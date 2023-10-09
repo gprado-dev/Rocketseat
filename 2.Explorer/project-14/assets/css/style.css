@@ -28,6 +28,11 @@ body, button, input {
   font-size: 1.6rem;
 }
 
+input, button {
+  border: none;
+  padding: 1.6rem;
+}
+
 .hide {
   display: none;
 }
@@ -67,11 +72,6 @@ form {
   margin-top: 4.8rem;
   display: flex;
   justify-content: center;
-}
-
-input, button {
-  border: none;
-  padding: 1.6rem;
 }
 
 input {
