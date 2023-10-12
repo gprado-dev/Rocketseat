@@ -1,0 +1,348 @@
+/* ---------------------------------------------
+GENERAL SETTINGS ///////////////////////////////
+--------------------------------------------- */
+/* /// reset /// */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-size: 62.5%; /* 10px */
+}
+
+/* ---------------------------------------------
+VAR SETTINGS ///////////////////////////////////
+--------------------------------------------- */
+html {
+  /* colors */
+  --color-primary-light: #DCE2E9; /* input-bg */
+  --color-primary-base: #02799D; /* button */
+  --color-primary-low: #0C3440; /* heading title */
+  --color-primary-darkest: #040924; /* background */
+
+  --color-secondary-base: #00453A; /* label & hover  */
+  --color-secondary-low: #212529; /* input-text */
+
+  --color-light-box: rgba(0, 0, 0, .7); /* lightbox */
+  
+  --color-success-base: #3DF08D; /* success */
+  --color-danger-base: #F03E3E; /* errors */
+  
+  --color-white: #FFF; /* shape & negative-text */
+  --color-black: #000;
+  --color-gray-100: rgba(73, 80, 87, .3); /* input borders */
+  --color-gray-200: rgba(73, 80, 87, .5); /* placeholders */
+
+  /* typography */
+  /*font shorthand: style variant weight size/line-height family*/
+  /* --font-heading-sm: ;  */
+  /* --font-heading-md: ; */
+  --font-heading-lg: normal normal 700 3.2rem/4rem 'Roboto', sans-serif;
+  /* --font-heading-xl: ; */
+  /* --font-heading-xxl: ; */
+
+  /* --font-text-xs: ; */
+  --font-text-sm-regular: normal normal 400 1.4rem/1.8rem 'Roboto', sans-serif;
+  --font-text-sm-bold: normal normal 700 1.4rem/1.8rem 'Roboto', sans-serif;
+  --font-text-md-regular: normal normal 400 1.6rem/2rem 'Roboto', sans-serif;
+  --font-text-md-bold: normal normal 700 1.6rem/2rem 'Roboto', sans-serif;
+  /* --font-text-lg: ; */
+
+  /* grid */
+  --grid-max-width: 121.6rem;
+
+  /* transitions */
+  --transition-buttons: .3s;
+  --transition-inputs: .1s;
+  --transition-alerts: .5s;
+}
+
+/* ---------------------------------------------
+GLOBAL /////////////////////////////////////////
+--------------------------------------------- */
+/* /// global /// */
+html, body, input, textarea, button {
+  font: var(--font-text-md-regular)
+}
+
+body {
+  font-size: 1.6rem;
+  background: var(--color-primary-darkest);
+  color: var(--color-black);
+}
+
+.grid-container {
+  max-width: var(--grid-max-width);
+  margin-inline: auto;
+}
+
+.container {
+  padding: 1.6rem;
+}
+
+/* ---------------------------------------------
+MAIN ///////////////////////////////////////////
+--------------------------------------------- */
+/* /// card /// */
+.container {
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+
+.card {
+  width: calc(100vw - 2.4rem);
+  max-width: 40rem;
+  
+  background: var(--color-white);
+  border-radius: .4rem;
+
+  padding: 4.8rem clamp(2.4rem, 5vw, 6.4rem) 6.4rem;
+  margin-inline: auto;
+
+  box-shadow: 0 .2rem .4rem rgba(0, 0, 0, .1);
+}
+
+/* form */
+form {
+  width: auto;
+}
+
+form h1 {
+  font: var(--font-heading-lg);
+  color: var(--color-primary-low);
+}
+
+form h1 + .input-wrapper {
+  margin-top: 3.2rem;
+}
+
+.input-wrapper + .input-wrapper {
+  margin-top: 1.6rem;
+}
+
+form label {
+  font: var(--font-text-sm-regular);
+  color: var(--color-secondary-base);
+
+  display: block;
+  margin-bottom: .8rem;
+}
+
+form input {
+  width: 100%;
+  padding: 1.6rem;
+
+  background: var(--color-primary-light);
+  border: 1px solid var(--color-gray-100);
+  border-radius: .4rem;
+
+  font: var(--font-text-md-regular);
+  color: var(--color-secondary-low);
+}
+
+form button {
+  cursor: pointer;
+
+  width: 100%;
+  background: var(--color-primary-base);
+  border: none;
+  border-radius: .4rem;
+
+  font: var(--font-text-md-bold);
+  color: var(--color-white);
+
+  padding: 1.6rem;
+  margin-top: 3.2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .8rem;
+
+  transition: all var(--transition-buttons);
+}
+
+/* ---------------------------------------------
+MODAL //////////////////////////////////////////
+--------------------------------------------- */
+/* /// containers /// */
+.modal-wrapper {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+
+  background: var(--color-light-box);
+  
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modal-wrapper.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal {
+  position: relative;
+}
+
+
+/* /// close button /// */
+.modal button {
+  cursor: pointer;
+
+  background: none;
+  border: none;
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+
+  transition: transform var(--transition-buttons);
+}
+
+
+/* ---------------------------------------------
+USER INTERACTIONS //////////////////////////////
+--------------------------------------------- */
+/* /// buttons /// */
+form button:hover {
+  background-color: var(--color-secondary-base);
+}
+
+form button > svg {
+  transition: var(--transition-buttons);
+}
+
+form button:hover > svg {
+  transform: translateX(8px);
+}
+
+.modal button:hover {
+  transform: scale(1.1);
+}
+
+
+/* /// input feedbacks /// */
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: var(--color-gray-200);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: .2rem solid var(--color-secondary-base);
+  transition: var(--transition-inputs);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus,
+select:-webkit-autofill:active {
+  outline: .2rem solid var(--color-secondary-base);
+  -webkit-text-fill-color: var(--color-secondary-low);
+  -webkit-box-shadow: 0 0 0px 1000px var(--color-primary-light) inset;
+  transition: background-color var(--transition-inputs) ease-in-out 0s;
+}
+
+.validation {
+  position: absolute;
+  top: 105%;
+  left: 1%;
+  opacity: 0;
+  font-size: 12px;
+  color: var(--color-danger-base);
+  transition: opacity;
+}
+
+input:required:invalid:not(:placeholder-shown) + .validation {
+  opacity: 1;
+}
+
+input:required:valid {
+  border: 1.5px solid var(--color-success-base);
+}
+
+/* input:not([value=""]):not(:focus):invalid */
+input:required:invalid:not(:placeholder-shown) {
+  border: 1.5px solid var(--color-danger-base);
+}
+
+
+/* /// alerts /// */
+/* container */
+.alert {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-block: .8rem;
+  
+  text-align: center;
+  font: var(--font-text-md-bold);
+  color: var(--color-white);
+
+  visibility: hidden;
+  opacity: 0;
+
+  transform: translateY(-3.6rem);
+  transition: var(--transition-alerts);
+}
+
+.alert.open {
+  visibility: visible;
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+/* error */
+.alert-error {
+  background: var(--color-danger-base);
+}
+
+
+
+/* ---------------------------------------------
+RESPONSIVENESS /////////////////////////////////
+--------------------------------------------- */
+/* /// mobile /// */
+@media (max-width: 425px) {
+
+}
+
+/* /// Tablet /// */
+@media (min-width: 768px) {
+
+}
+
+/* /// laptop /// */
+@media (min-width: 1024px) {
+
+}
+
+
+/* ---------------------------------------------
+ANIMATIONS /////////////////////////////////////
+--------------------------------------------- */
+/* title animation */
+@keyframes nameHere {
+  0% {  }
+  50% {  }
+  100% {  }
+}

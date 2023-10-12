@@ -17,7 +17,7 @@
 
   O programa deverá capturqar o número digitado pelo usuário e mostrar os seguintes comentários:
 
-    a. Caso o usuário digite 1, ele poderá cadastrqar um item em uma lista;
+    a. Caso o usuário digite 1, ele poderá cadastrar um item em uma lista;
     
     b. Caso o usuário digite 2, ele poderá ver os itens cadastrados.
       - Se não houver nenhum item cadastrado, mostrar a mensagem: "Não existem itens cadastrados."
