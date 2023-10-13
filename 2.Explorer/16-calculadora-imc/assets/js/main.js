@@ -1,4 +1,12 @@
 /* ---------------------------------------------
+IMPORTS ////////////////////////////////////////
+--------------------------------------------- */
+import { Modal } from './modal.js'
+import { AlertError } from './alert-error.js'
+import { notNumber, calculateIMC, groupIMC } from './utils.js'
+
+
+/* ---------------------------------------------
 VARIABLES //////////////////////////////////////
 --------------------------------------------- */
 /* /// form /// */
@@ -6,21 +14,6 @@ const form = document.querySelector('form')
 const inputWeight = document.querySelector('#weight')
 const inputHeight = document.querySelector('#height')
 
-/* /// modal -> object literal /// */
-const Modal = {
-  // selectors
-  wrapper: document.querySelector('.modal-wrapper'),
-  message: document.querySelector('.modal .title'),
-  btnClose: document.querySelector('.modal .btn-close'),
-
-  //functions
-  open() {
-    Modal.wrapper.classList.add('open')
-  },
-  close() {
-    Modal.wrapper.classList.remove('open')
-  }
-}
 
 /* ---------------------------------------------
 FUNCTIONS //////////////////////////////////////
@@ -34,26 +27,34 @@ form.onsubmit = (event) => {
   const weight = inputWeight.value
   const height = inputHeight.value
 
+  const weightOrHeightIsNotANumber = notNumber(weight) || notNumber(height)
+  
+  // input validation
+  if (weightOrHeightIsNotANumber) {
+    AlertError.open()
+    return
+  }
+
+  AlertError.close()
+
   // process data
-  const result = IMC(weight, height)
-  const message = `Seu IMC é de ${result}`
+  const result = calculateIMC(weight, height)
+  const resultGroupIMC = groupIMC(result)
+  displayResultMessage(result, resultGroupIMC)
+}
+
+/* /// close alert if a key is pressed on inputs /// */
+inputWeight.oninput = () => AlertError.close()
+inputHeight.oninput = () => AlertError.close()
+
+/* /// print result /// */
+function displayResultMessage(result, resultGroupIMC) {
+    // process data
+  const messageTitle = `Seu IMC é de ${result}`
+  const messageParagraph = `Grupo: ${resultGroupIMC}`
 
   // print result
-  Modal.message.innerText = message
+  Modal.title.innerText = messageTitle
+  Modal.paragraph.innerText = messageParagraph
   Modal.open()
 }
-
-/* /// calculate IMC /// */
-function IMC(weight, height) {
-  return (weight / ((height / 100) ** 2)).toFixed(2)
-}
-
-/* /// modal close button /// */
-Modal.btnClose.onclick = () => {
-  Modal.close()
-}
-
-
-/* ---------------------------------------------
-DRAFTS /////////////////////////////////////////
---------------------------------------------- */

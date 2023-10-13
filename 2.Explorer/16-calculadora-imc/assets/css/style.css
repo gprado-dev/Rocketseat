@@ -189,7 +189,13 @@ MODAL //////////////////////////////////////////
 }
 
 .modal {
+  width: calc(100vw - 3.2rem);
+  max-width: 38.4rem;
+  padding-bottom: 4.8rem;
   position: relative;
+
+  border: 1px solid var(--color-light-box);
+  box-shadow: 0 0 24px rgba(0, 0, 0, .5);
 }
 
 
@@ -204,6 +210,12 @@ MODAL //////////////////////////////////////////
   right: 1.6rem;
 
   transition: transform var(--transition-buttons);
+}
+
+/* /// paragraph /// */
+.modal .paragraph {
+  opacity: 0.6;
+  margin-top: 1.6rem;
 }
 
 
@@ -340,9 +352,36 @@ RESPONSIVENESS /////////////////////////////////
 /* ---------------------------------------------
 ANIMATIONS /////////////////////////////////////
 --------------------------------------------- */
-/* title animation */
-@keyframes nameHere {
-  0% {  }
-  50% {  }
-  100% {  }
+/* /// modal /// */
+/* etrance */
+.modal-wrapper.open .modal {
+  -webkit-animation: fade-in-fwd 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	animation: fade-in-fwd 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
+
+@-webkit-keyframes fade-in-fwd {
+  0% {
+    -webkit-transform: translateZ(-80px);
+            transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-fwd {
+  0% {
+    -webkit-transform: translateZ(-80px);
+            transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+/* exit */
