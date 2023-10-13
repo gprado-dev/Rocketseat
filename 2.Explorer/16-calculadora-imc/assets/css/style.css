@@ -39,18 +39,12 @@ html {
 
   /* typography */
   /*font shorthand: style variant weight size/line-height family*/
-  /* --font-heading-sm: ;  */
-  /* --font-heading-md: ; */
   --font-heading-lg: normal normal 700 3.2rem/4rem 'Roboto', sans-serif;
-  /* --font-heading-xl: ; */
-  /* --font-heading-xxl: ; */
 
-  /* --font-text-xs: ; */
   --font-text-sm-regular: normal normal 400 1.4rem/1.8rem 'Roboto', sans-serif;
   --font-text-sm-bold: normal normal 700 1.4rem/1.8rem 'Roboto', sans-serif;
   --font-text-md-regular: normal normal 400 1.6rem/2rem 'Roboto', sans-serif;
   --font-text-md-bold: normal normal 700 1.6rem/2rem 'Roboto', sans-serif;
-  /* --font-text-lg: ; */
 
   /* grid */
   --grid-max-width: 121.6rem;
