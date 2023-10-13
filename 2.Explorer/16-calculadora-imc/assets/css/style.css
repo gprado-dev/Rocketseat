@@ -179,12 +179,14 @@ MODAL //////////////////////////////////////////
 
   background: var(--color-light-box);
   
-  visibility: hidden;
+  /* visibility: hidden; */
+  z-index: -1;
   opacity: 0;
 }
 
 .modal-wrapper.open {
-  visibility: visible;
+  /* visibility: visible; */
+  z-index: 1;
   opacity: 1;
 }
 
@@ -193,9 +195,18 @@ MODAL //////////////////////////////////////////
   max-width: 38.4rem;
   padding-bottom: 4.8rem;
   position: relative;
-
+  
   border: 1px solid var(--color-light-box);
   box-shadow: 0 0 24px rgba(0, 0, 0, .5);
+  
+  transition: all 0.4s ease-in-out;
+  top: -16%;
+  opacity: 0;
+}
+
+.modal-wrapper.open .modal {
+  top: 0;
+  opacity: 1;
 }
 
 
@@ -272,29 +283,6 @@ select:-webkit-autofill:active {
   transition: background-color var(--transition-inputs) ease-in-out 0s;
 }
 
-.validation {
-  position: absolute;
-  top: 105%;
-  left: 1%;
-  opacity: 0;
-  font-size: 12px;
-  color: var(--color-danger-base);
-  transition: opacity;
-}
-
-input:required:invalid:not(:placeholder-shown) + .validation {
-  opacity: 1;
-}
-
-input:required:valid {
-  border: 1.5px solid var(--color-success-base);
-}
-
-/* input:not([value=""]):not(:focus):invalid */
-input:required:invalid:not(:placeholder-shown) {
-  border: 1.5px solid var(--color-danger-base);
-}
-
 
 /* /// alerts /// */
 /* container */
@@ -327,61 +315,3 @@ input:required:invalid:not(:placeholder-shown) {
 .alert-error {
   background: var(--color-danger-base);
 }
-
-
-
-/* ---------------------------------------------
-RESPONSIVENESS /////////////////////////////////
---------------------------------------------- */
-/* /// mobile /// */
-@media (max-width: 425px) {
-
-}
-
-/* /// Tablet /// */
-@media (min-width: 768px) {
-
-}
-
-/* /// laptop /// */
-@media (min-width: 1024px) {
-
-}
-
-
-/* ---------------------------------------------
-ANIMATIONS /////////////////////////////////////
---------------------------------------------- */
-/* /// modal /// */
-/* etrance */
-.modal-wrapper.open .modal {
-  -webkit-animation: fade-in-fwd 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	animation: fade-in-fwd 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-}
-
-@-webkit-keyframes fade-in-fwd {
-  0% {
-    -webkit-transform: translateZ(-80px);
-            transform: translateZ(-80px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-    opacity: 1;
-  }
-}
-@keyframes fade-in-fwd {
-  0% {
-    -webkit-transform: translateZ(-80px);
-            transform: translateZ(-80px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-    opacity: 1;
-  }
-}
-
-/* exit */

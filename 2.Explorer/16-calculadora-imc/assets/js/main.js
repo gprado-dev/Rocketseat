@@ -13,6 +13,7 @@ VARIABLES //////////////////////////////////////
 const form = document.querySelector('form')
 const inputWeight = document.querySelector('#weight')
 const inputHeight = document.querySelector('#height')
+const pressEnter = document.querySelector('button[type="submit"]')
 
 
 /* ---------------------------------------------
@@ -43,13 +44,20 @@ form.onsubmit = (event) => {
   displayResultMessage(result, resultGroupIMC)
 }
 
+/* /// press enter to active submit btn /// */
+window.addEventListener('keydown', (event) => {
+  if(event.key === 'Enter') {
+   pressEnter.click()
+  }
+})
+
 /* /// close alert if a key is pressed on inputs /// */
 inputWeight.oninput = () => AlertError.close()
 inputHeight.oninput = () => AlertError.close()
 
 /* /// print result /// */
 function displayResultMessage(result, resultGroupIMC) {
-    // process data
+  // process data
   const messageTitle = `Seu IMC é de ${result}`
   const messageParagraph = `Grupo: ${resultGroupIMC}`
 

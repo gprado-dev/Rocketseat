@@ -4,6 +4,7 @@ VARIABLES //////////////////////////////////////
 export const Modal = {
   // selectors
   wrapper: document.querySelector('.modal-wrapper'),
+  card: document.querySelector('.modal'),
   title: document.querySelector('.modal .title'),
   paragraph: document.querySelector('.modal .paragraph'),
   btnClose: document.querySelector('.modal .btn-close'),
