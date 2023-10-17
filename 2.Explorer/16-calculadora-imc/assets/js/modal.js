@@ -11,10 +11,12 @@ export const Modal = {
 
   //functions
   open() {
+    Modal.wrapper.classList.remove('close')
     Modal.wrapper.classList.add('open')
   },
   close() {
-    Modal.wrapper.classList.remove('open')
+    Modal.wrapper.classList.add('close')
+    setTimeout(() => { Modal.wrapper.classList.remove('open') }, 400)
   }
 }
 
