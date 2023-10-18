@@ -11,7 +11,40 @@ GENERAL SETTINGS ///////////////////////////////
 }
 
 :root {
-  font-size: 62.5%; /* 10px */
+  font-size: clamp(40%, 1% + 2vw, 62.5%); /* 10px */
+}
+
+html.light {
+  --bg-color: hsl(var(--hue), 40%, 98%);
+  --text-color: hsl(var(--hue), 5%, 7%);
+}
+
+.flex {
+  display: flex;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+  appearance: none;
+}
+
+.not-sr-only {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
 }
 
 /* ---------------------------------------------
@@ -19,13 +52,13 @@ VAR SETTINGS ///////////////////////////////////
 --------------------------------------------- */
 html {
   /* colors */
-  --color-primary-base: #42D3FF;
+  --hue: 194;
+  --color-primary-base: hsl(var(--hue), 100%, 63%);
   
-  --color-white: #FFF;
-  --color-black: #000;
-  --color-gray-100: #F8F8FC;
-  --color-gray-800: #242424;
-  --color-gray-900: #121214;
+  --bg-color: hsl(var(--hue), 5%, 7%);
+  --text-color: hsl(var(--hue), 40%, 98%);
+  --controls-bg-color: hsl(var(--hue), 0%, 14%);
+  --buttons-secondary: hsl(var(--hue), 40%, 98%);
 
   /* typography */
   /*font shorthand: style variant weight size/line-height family*/
@@ -42,14 +75,14 @@ html {
 GLOBAL /////////////////////////////////////////
 --------------------------------------------- */
 /* /// global /// */
-html, body, input, textarea, button {
-  font: var(--font-heading-xl);
-}
-
 body {
   font-size: 1.6rem;
-  background: var(--color-gray-900);
-  color: var(--color-gray-100);
+  background: var(--bg-color);
+  color: var(--text-color);
+
+  display: grid;
+  place-content: center;
+  height: 100vh;
 }
 
 .grid-container {
@@ -57,16 +90,69 @@ body {
 }
 
 /* ---------------------------------------------
-HEADER /////////////////////////////////////////
+CLOCK //////////////////////////////////////////
 --------------------------------------------- */
 /* /// containers /// */
+#app {
+  display: grid;
+  justify-items: center;
+}
 
+#timer {
+  font: var(--font-heading-xl);
+}
 
 /* ---------------------------------------------
-SECTION: X /////////////////////////////////////
+CONTROLS ////////////////////////////////////////
 --------------------------------------------- */
 /* /// containers /// */
+#controls {
+  margin-top: 1.6rem;
+  padding: 2.2rem 4rem;
+  gap: 1.6rem;
+  background-color: var(--controls-bg-color);
+  border-radius: 999rem;
+}
 
+/* /// buttons /// */
+button {
+  background: transparent;
+  border: none;
+  color: var(--color-primary-base);
+
+  cursor: pointer;
+
+  font-size: 6.4rem;
+}
+
+.secondary {
+  color: var(--buttons-secondary);
+}
+
+/* on play & music on */
+.running .ph-play-circle,
+.running .ph-timer,
+.music-on .ph-speaker-none,
+html:not(.running) .ph-pause-circle,
+html:not(.running) .ph-stop-circle,
+html:not(.music-on) .ph-speaker-high {
+  display: none;
+}
+
+/* color theme */
+.light .ph-sun,
+html:not(.light) .ph-moon {
+  display: none;
+}
+
+#toggle-mode {
+  position: absolute;
+  top: 3.2rem;
+  right: 3.2rem;
+  font-size: 3.2rem;
+  line-height: 0;
+  color: var(--text-color);
+}
 
 /* ---------------------------------------------
 USER INTERACTIONS //////////////////////////////
