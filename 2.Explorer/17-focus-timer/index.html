@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="running music-on">
+<html lang="pt-br">
 <!-- start -->
 <head>
   <!-- preconect -->
@@ -25,13 +25,16 @@
 
   <!-- icons -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- javascript -->
+  <script src="./assets/js/main.js" type="module"></script>
 </head>
 <!-- viewport -->
 <body>
   <!-- application -->
   <div id="app">
     <button id="toggle-mode">
-      <span class="sr-only">Ativar/Desativar Light Mode</span>
+      <span class="sr-only">Ativar light mode</span>
       <i class="ph-bold ph-sun"></i>
       <i class="ph-bold ph-moon"></i>
     </button>
@@ -43,29 +46,26 @@
     </div>
 
     <div id="controls" class="flex">
-      <button class="ph ph-play-circle">
+      <button data-action="toggleRunning" class="ph ph-play-circle">
         <span class="sr-only">Iniciar contador</span>
       </button>
-      <button class="ph ph-pause-circle">
+      <button data-action="toggleRunning" class="ph ph-pause-circle">
         <span class="sr-only">Pausar contador</span>
       </button>
-      <button class="ph ph-timer secondary">
+      <button data-action="set" class="ph ph-timer secondary">
         <span class="sr-only">Ajustar contador</span>
       </button>
-      <button class="ph ph-stop-circle secondary">
+      <button data-action="reset" class="ph ph-stop-circle secondary">
         <span class="sr-only">Reiniciar contador</span>
       </button>
-      <button class="ph ph-speaker-none secondary">
+      <button data-action="toggleMusic" class="ph ph-speaker-none secondary">
         <span class="sr-only">Iniciar música</span>
       </button>
-      <button class="ph ph-speaker-high">
+      <button data-action="toggleMusic" class="ph ph-speaker-high">
         <span class="sr-only">Parar música</span>
       </button>
     </div>
   </div>
-  
-  <!-- javascript -->
-  <script src="./assets/js/main.js" type="module"></script>
 </body>
 <!-- end -->
 </html>
