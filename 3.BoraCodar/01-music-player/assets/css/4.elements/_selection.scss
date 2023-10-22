@@ -1,0 +1,17 @@
+::selection
+{
+  background: rgba(0, 116, 255, 0.8);
+  color: white;
+}
+
+::-moz-selection
+{
+  background: rgba(0, 116, 255, 0.8);
+  color: white;
+}
+
+img::selection
+{
+  background: rgba(0, 116, 255, 0.8);
+  color: white;
+}

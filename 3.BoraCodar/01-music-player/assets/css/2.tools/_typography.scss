@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "SF Pro Text Regular";
+  src: url(../../fonts/SF-Pro-Text-Regular.otf);
+}
+
+@font-face {
+  font-family: "SF Pro Text Bold";
+  src: url(../../fonts/SF-Pro-Text-Semibold.otf);
+}
+
+@font-face {
+  font-family: "SF Pro Display Semibold";
+  src: url(../../fonts/SF-Pro-Display-Semibold.otf);
+}
+
+@font-face {
+  font-family: "SF Pro Display Bold";
+  src: url(../../fonts/SF-Pro-Display-Bold.otf);
+}
+
+@mixin regular-caption2 {
+  font-family: "SF Pro Text Regular";
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.3rem; /* 118.182% */
+  letter-spacing: 0.066px;
+}
+
+@mixin bold-caption2 {}
+
+
+@mixin regular-caption1 {}
+@mixin bold-caption1 {}
+
+@mixin regular-footnote {}
+@mixin bold-footnote {}
+
+@mixin regular-subheadline {}
+@mixin bold-subheadline {}
+
+@mixin regular-callout {}
+@mixin bold-callout {}
+
+@mixin regular-body {}
+@mixin bold-body {}
+
+@mixin regular-headline {}
+@mixin bold-headline {}
+
+@mixin regular-title3 {}
+@mixin bold-title3 {}
+
+@mixin regular-title2 {}
+@mixin bold-title2 {}
+
+@mixin regular-title1 {}
+@mixin bold-title1 {}
+
+@mixin regular-largetitle {}
+@mixin bold-largetitle {}

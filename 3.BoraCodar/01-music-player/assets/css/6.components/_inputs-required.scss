@@ -1,0 +1,7 @@
+input:required:valid {
+  border: 1.5px solid $color-success-light;
+}
+
+input:required:invalid:not(:placeholder-shown) {
+  border: 1.5px solid $color-danger-base;
+}
