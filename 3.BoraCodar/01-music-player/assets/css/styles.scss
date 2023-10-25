@@ -9,15 +9,23 @@
   './3.generics/reset',
 
   './4.elements/body',
+  './4.elements/header',
   './4.elements/links',
+  './4.elements/selection',
 
   './5.objects/containers',
   './5.objects/sr-only',
   
-  './6.components/buttons-primary',
-  './6.components/buttons-secondary',
-  './6.components/inputs-required',
-  './6.components/inputs',
-  './6.components/search-bar',
-  './6.components/sliders'
+  // buttons
+  './6.components/buttons/buttons-primary',
+  './6.components/buttons/buttons-secondary',
+  // inputs
+  './6.components/inputs/inputs-required',
+  './6.components/inputs/inputs',
+  './6.components/inputs/search-bar',
+  './6.components/inputs/sliders',
+  // images
+  './6.components/images/covers',
+   // texts
+   './6.components/texts/texts'
 ;

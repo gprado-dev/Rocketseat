@@ -1,0 +1,18 @@
+// playlistInfo
+
+.playlistTitle {
+  color: $color-gray-100;
+  @include bold-largetitle;
+}
+
+.playlistParagraph {
+  color: $color-gray-200;
+  @include regular-subheadline
+}
+
+.playlistLenght,
+.playlistSeparator, 
+.playlistDuration {
+  color: $color-gray-200;
+  @include regular-footnote;
+}

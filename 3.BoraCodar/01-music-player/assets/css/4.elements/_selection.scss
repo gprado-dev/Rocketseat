@@ -1,17 +1,17 @@
 ::selection
 {
-  background: rgba(0, 116, 255, 0.8);
-  color: white;
+  background: hsla(48, 100%, 50%, 0.8);
+  color: $color-primary-dark;
 }
 
 ::-moz-selection
 {
-  background: rgba(0, 116, 255, 0.8);
-  color: white;
+  background: hsla(48, 100%, 50%, 0.8);
+  color: $color-primary-dark;
 }
 
 img::selection
 {
-  background: rgba(0, 116, 255, 0.8);
-  color: white;
+  background: hsla(48, 100%, 50%, 0.8);
+  color: $color-primary-dark;
 }

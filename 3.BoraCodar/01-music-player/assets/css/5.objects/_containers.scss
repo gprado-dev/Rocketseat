@@ -1,3 +1,48 @@
-.full-container {
-  max-width: 121.6rem;
+.playlist {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  max-width: $grid-max-width;
+  margin-inline: auto;
+}
+
+.d-cover-container {
+  position: absolute;
+  z-index: -1;
+
+  width: $grid-max-width;
+  height: 24rem;
+  border-radius: $radius-md;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playlistInfo-container {
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+
+  padding-top: 8rem;
+  padding-left: 10.4rem;
+  padding-right: 1.6rem;
+}
+
+.playlistInfo-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}
+
+.playlistData-container {
+  display: flex;
+  gap: .8rem;
+}
+
+.playlistSeparator {
+  color: $color-gray-300;
 }

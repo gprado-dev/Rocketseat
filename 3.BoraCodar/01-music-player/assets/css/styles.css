@@ -2,19 +2,33 @@
 @keyframes nameHere {}
 @font-face {
   font-family: "SF Pro Text Regular";
-  src: url(../../fonts/SF-Pro-Text-Regular.otf);
+  src: url(../fonts/SF-Pro-Text-Regular.otf);
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
-  font-family: "SF Pro Text Bold";
-  src: url(../../fonts/SF-Pro-Text-Semibold.otf);
+  font-family: "SF Pro Text Semibold";
+  src: url(../fonts/SF-Pro-Text-Semibold.otf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF Pro Display Regular";
+  src: url(../fonts/SF-Pro-Display-Regular.otf);
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: "SF Pro Display Semibold";
-  src: url(../../fonts/SF-Pro-Display-Semibold.otf);
+  src: url(../fonts/SF-Pro-Display-Semibold.otf);
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: "SF Pro Display Bold";
-  src: url(../../fonts/SF-Pro-Display-Bold.otf);
+  src: url(../fonts/SF-Pro-Display-Bold.otf);
+  font-weight: normal;
+  font-style: normal;
 }
 * {
   margin: 0;
@@ -25,7 +39,7 @@
 }
 
 :root {
-  font-size: clamp(40%, 1% + 2vw, 62.5%);
+  font-size: 62.5%;
 }
 
 body {
@@ -34,6 +48,68 @@ body {
   font-weight: 400;
   background: #161122;
   color: #BEBCC2;
+}
+
+header {
+  background-color: #161122;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+html.mobile header {
+  height: 7.2rem;
+  width: 100vw;
+}
+
+html.desktop header {
+  height: 9.6rem;
+  max-width: 121.6rem;
+  margin: 0 auto;
+}
+
+.logo {
+  width: auto;
+  height: clamp(1.6rem, 1% + 2vw, 2.4rem);
+}
+
+html.desktop .m-btnLock,
+html.mobile .d-btnLock {
+  display: none;
+}
+
+.d-btnLock, .m-btnLock {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  right: 1.6rem;
+  transition: all 400ms;
+}
+
+.m-btnLock {
+  width: 4rem;
+  height: 4rem;
+  background-image: url("../img/icon-lock.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.d-btnLock {
+  width: 4rem;
+  height: 4rem;
+  background-image: url("../img/icon-unlock.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.d-btnLock:hover {
+  background-color: #30254D;
+  background-image: url("../img/icon-lock.svg");
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* unvisited link */
@@ -56,8 +132,75 @@ a:active {
   color: black;
 }
 
-.full-container {
+::-moz-selection {
+  background: hsla(48, 100%, 50%, 0.8);
+  color: #161122;
+}
+
+::selection {
+  background: hsla(48, 100%, 50%, 0.8);
+  color: #161122;
+}
+
+::-moz-selection {
+  background: hsla(48, 100%, 50%, 0.8);
+  color: #161122;
+}
+
+img::-moz-selection {
+  background: hsla(48, 100%, 50%, 0.8);
+  color: #161122;
+}
+
+img::selection {
+  background: hsla(48, 100%, 50%, 0.8);
+  color: #161122;
+}
+
+.playlist {
+  position: relative;
+  display: flex;
+  justify-content: center;
   max-width: 121.6rem;
+  margin-inline: auto;
+}
+
+.d-cover-container {
+  position: absolute;
+  z-index: -1;
+  width: 121.6rem;
+  height: 24rem;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playlistInfo-container {
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  padding-top: 8rem;
+  padding-left: 10.4rem;
+  padding-right: 1.6rem;
+}
+
+.playlistInfo-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.playlistData-container {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.playlistSeparator {
+  color: #7D7986;
 }
 
 .sr-only {
@@ -131,4 +274,67 @@ select:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0px 1000px #000 inset;
   -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
+}
+
+html.mobile .cover {
+  width: 32.8rem;
+  height: 24rem;
+  border-radius: 0.8rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+html.desktop .cover {
+  width: 17.6rem;
+  height: 17.6rem;
+  border-radius: 0.4rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.25);
+}
+
+html.mobile .d-cover {
+  display: none;
+}
+
+html.desktop .d-cover {
+  width: 105%;
+  height: 24rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url("../img/img-cover.jpg"), lightgray 50%/cover no-repeat;
+  background-position: center;
+  filter: blur(15px);
+}
+
+.playlistTitle {
+  color: #F2F2F3;
+  font-family: "SF Pro Display Bold";
+  font-size: 3.4rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 4.1rem; /* 120.588% */
+  letter-spacing: 0.374px;
+}
+
+.playlistParagraph {
+  color: #BEBCC2;
+  font-family: "SF Pro Text Regular";
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 2rem; /* 133.333% */
+  letter-spacing: -0.24px;
+}
+
+.playlistLenght,
+.playlistSeparator,
+.playlistDuration {
+  color: #BEBCC2;
+  font-family: "SF Pro Text Regular";
+  font-size: 1.3rem;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.8rem; /* 138.462% */
+  letter-spacing: -0.078px;
 }/*# sourceMappingURL=styles.css.map */

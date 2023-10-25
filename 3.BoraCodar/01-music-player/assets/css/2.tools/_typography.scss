@@ -1,61 +1,226 @@
+$text-regular: "SF Pro Text Regular";
 @font-face {
   font-family: "SF Pro Text Regular";
-  src: url(../../fonts/SF-Pro-Text-Regular.otf);
+  src: url(../fonts/SF-Pro-Text-Regular.otf);
+  font-weight: normal;
+  font-style: normal;
 }
 
+$text-semibold: "SF Pro Text Semibold";
 @font-face {
-  font-family: "SF Pro Text Bold";
-  src: url(../../fonts/SF-Pro-Text-Semibold.otf);
+  font-family: "SF Pro Text Semibold";
+  src: url(../fonts/SF-Pro-Text-Semibold.otf);
+  font-weight: normal;
+  font-style: normal;
 }
 
+$display-regular: "SF Pro Display Regular";
+@font-face {
+  font-family: "SF Pro Display Regular";
+  src: url(../fonts/SF-Pro-Display-Regular.otf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+$display-semibold: "SF Pro Display Semibold";
 @font-face {
   font-family: "SF Pro Display Semibold";
-  src: url(../../fonts/SF-Pro-Display-Semibold.otf);
+  src: url(../fonts/SF-Pro-Display-Semibold.otf);
+  font-weight: normal;
+  font-style: normal;
 }
 
+$display-bold: "SF Pro Display Bold";
 @font-face {
   font-family: "SF Pro Display Bold";
-  src: url(../../fonts/SF-Pro-Display-Bold.otf);
+  src: url(../fonts/SF-Pro-Display-Bold.otf);
+  font-weight: normal;
+  font-style: normal;
 }
 
 @mixin regular-caption2 {
-  font-family: "SF Pro Text Regular";
+  font-family: $text-regular;
   font-size: 1.1rem;
+  font-weight: normal;
   font-style: normal;
-  font-weight: 400;
   line-height: 1.3rem; /* 118.182% */
   letter-spacing: 0.066px;
 }
 
-@mixin bold-caption2 {}
+@mixin bold-caption2 {
+  font-family: $text-semibold;
+  font-size: 1.1rem;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.3rem; /* 118.182% */
+  letter-spacing: 0.06px;
+}
 
 
-@mixin regular-caption1 {}
-@mixin bold-caption1 {}
+@mixin regular-caption1 {
+  font-family: $text-regular;
+  font-size: 1.2rem;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.6rem; /* 133.333% */
+}
+@mixin bold-caption1 {
+  font-family: $text-semibold;
+  font-size: 1.2rem;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.6rem; /* 133.333% */
+}
 
-@mixin regular-footnote {}
-@mixin bold-footnote {}
+@mixin regular-footnote {
+  font-family: $text-regular;
+  font-size: 1.3rem;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.8rem; /* 138.462% */
+  letter-spacing: -0.078px;
+}
+@mixin bold-footnote {
+  font-family: $text-semibold;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.8rem; /* 138.462% */
+  letter-spacing: -0.078px;
+}
 
-@mixin regular-subheadline {}
-@mixin bold-subheadline {}
+@mixin regular-subheadline {
+  font-family: $text-regular;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 2rem; /* 133.333% */
+  letter-spacing: -0.24px;
+}
+@mixin bold-subheadline {
+  font-family: $text-semibold;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 2rem; /* 133.333% */
+  letter-spacing: -0.5px;
+}
 
-@mixin regular-callout {}
-@mixin bold-callout {}
+@mixin regular-callout {
+  font-family: $text-regular;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 2.1rem; /* 131.25% */
+  letter-spacing: -0.32px;
+}
+@mixin bold-callout {
+  font-family: $text-semibold;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 2.1rem; /* 131.25% */
+  letter-spacing: -0.32px;
+}
 
-@mixin regular-body {}
-@mixin bold-body {}
+@mixin regular-body {
+  font-family: $text-regular;
+  font-size: 1.7rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 2.2rem; /* 129.412% */
+  letter-spacing: -0.408px;
+}
+@mixin bold-body {
+  font-family: $text-semibold;
+  font-size: 1.7rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 2.2rem; /* 129.412% */
+  letter-spacing: -0.408px;
+}
 
-@mixin regular-headline {}
-@mixin bold-headline {}
+@mixin regular-headline {
+  font-family: $text-regular;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 2.2rem; /* 122.222% */
+  letter-spacing: -0.408px;
+}
+@mixin bold-headline {
+  font-family: $text-semibold;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 2.2rem; /* 122.222% */
+  letter-spacing: -0.408px;
+}
 
-@mixin regular-title3 {}
-@mixin bold-title3 {}
+@mixin regular-title3 {
+  font-family: $display-regular;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 2.4rem; /* 120% */
+  letter-spacing: 0.38px;
+}
+@mixin bold-title3 {
+  font-family: $display-semibold;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 2.4rem; /* 120% */
+  letter-spacing: 0.38px;
+}
 
-@mixin regular-title2 {}
-@mixin bold-title2 {}
+@mixin regular-title2 {
+  font-family: $display-regular;
+  font-size: 2.2rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 2.8rem; /* 127.273% */
+  letter-spacing: 0.35px;
+}
+@mixin bold-title2 {
+  font-family: $display-bold;
+  font-size: 2.2rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 2.8rem; /* 127.273% */
+  letter-spacing: 0.35px;
+}
 
-@mixin regular-title1 {}
-@mixin bold-title1 {}
+@mixin regular-title1 {
+  font-family: $display-regular;
+  font-size: 2.8rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 3.4rem; /* 121.429% */
+  letter-spacing: 0.364px;
+}
+@mixin bold-title1 {
+  font-family: $display-bold;
+  font-size: 2.8rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 3.4rem; /* 121.429% */
+  letter-spacing: 0.36px;
+}
 
-@mixin regular-largetitle {}
-@mixin bold-largetitle {}
+@mixin regular-largetitle {
+  font-family: $display-regular;
+  font-size: 3.4rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 4.1rem; /* 120.588% */
+  letter-spacing: 0.374px;
+}
+@mixin bold-largetitle {
+  font-family: $display-bold;
+  font-size: 3.4rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 4.1rem; /* 120.588% */
+  letter-spacing: 0.374px;
+}

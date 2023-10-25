@@ -1,0 +1,31 @@
+// main cover
+html.mobile .cover {
+  width: 32.8rem;
+  height: 24rem;
+  border-radius: $radius-md;
+  object-fit: cover;
+}
+
+html.desktop .cover {
+  width: 17.6rem;
+  height: 17.6rem;
+  border-radius: $radius-sm;
+  object-fit: cover;
+  
+  box-shadow: $shadow-cover;
+}
+
+// cover wide for desktop
+html.mobile .d-cover {
+  display: none;
+}
+
+html.desktop .d-cover {
+  width: 105%;
+  height: 24rem;
+  object-fit: cover;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url('../img/img-cover.jpg'), lightgray 50% / cover no-repeat;
+  background-position: center;
+
+  filter: blur(15px);
+}
