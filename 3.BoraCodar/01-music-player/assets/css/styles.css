@@ -60,13 +60,13 @@ header {
 
 html.mobile header {
   height: 7.2rem;
-  width: 100vw;
+  width: 100%;
 }
 
 html.desktop header {
   height: 9.6rem;
   max-width: 121.6rem;
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
 .logo {
@@ -157,24 +157,44 @@ img::selection {
   color: #161122;
 }
 
+html.desktop main {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 126.4rem;
+  padding-inline: 2.4rem;
+}
+
 .playlist {
   position: relative;
   display: flex;
   justify-content: center;
+  width: 100%;
   max-width: 121.6rem;
   margin-inline: auto;
+}
+
+html.mobile .playlist {
+  padding-inline: 1.6rem;
+  flex-direction: column;
 }
 
 .d-cover-container {
   position: absolute;
   z-index: -1;
-  width: 121.6rem;
+  width: 100%;
   height: 24rem;
   border-radius: 0.8rem;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+html.mobile .playlistInfo-container {
+  flex-direction: column;
+  position: static;
+  width: 100%;
+  padding: 0;
 }
 
 .playlistInfo-container {
@@ -196,11 +216,8 @@ img::selection {
 
 .playlistData-container {
   display: flex;
+  align-items: center;
   gap: 0.8rem;
-}
-
-.playlistSeparator {
-  color: #7D7986;
 }
 
 .sr-only {
@@ -224,6 +241,14 @@ img::selection {
   overflow: visible;
   clip: auto;
   white-space: normal;
+}
+
+.playlistControlers-play {
+  width: 6.4rem;
+  height: 6.4rem;
+  background-color: none;
+  border: none;
+  background-image: url(../img/icon-controls-play-64.svg);
 }
 
 input:required:valid {
@@ -277,7 +302,8 @@ select:-webkit-autofill:active {
 }
 
 html.mobile .cover {
-  width: 32.8rem;
+  width: 100%;
+  max-width: 70rem;
   height: 24rem;
   border-radius: 0.8rem;
   -o-object-fit: cover;
@@ -307,6 +333,14 @@ html.desktop .d-cover {
   filter: blur(15px);
 }
 
+.separator-dot-sm {
+  display: block;
+  width: 0.4rem;
+  height: 0.4rem;
+  background-color: #7D7986;
+  border-radius: 50%;
+}
+
 .playlistTitle {
   color: #F2F2F3;
   font-family: "SF Pro Display Bold";
@@ -328,7 +362,6 @@ html.desktop .d-cover {
 }
 
 .playlistLenght,
-.playlistSeparator,
 .playlistDuration {
   color: #BEBCC2;
   font-family: "SF Pro Text Regular";

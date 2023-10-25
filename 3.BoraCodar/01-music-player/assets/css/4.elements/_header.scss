@@ -10,13 +10,13 @@ header {
 
 html.mobile header {
   height: 7.2rem;
-  width: 100vw;
+  width: 100%;
 }
 
 html.desktop header {
   height: 9.6rem;
   max-width: $grid-max-width;
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
 .logo {

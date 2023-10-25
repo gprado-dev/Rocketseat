@@ -1,16 +1,33 @@
+// main screen
+html.desktop main {
+  margin-inline: auto;
+  width: 100%;
+  max-width: calc($grid-max-width + 4.8rem);
+
+  padding-inline: 2.4rem;
+}
+
+// playlist
 .playlist {
   position: relative;
   display: flex;
   justify-content: center;
+  width: 100%;
   max-width: $grid-max-width;
   margin-inline: auto;
 }
 
+html.mobile .playlist {
+  padding-inline: 1.6rem;
+  flex-direction: column;
+}
+
+// container wide cover
 .d-cover-container {
   position: absolute;
   z-index: -1;
 
-  width: $grid-max-width;
+  width: 100%;
   height: 24rem;
   border-radius: $radius-md;
   overflow: hidden;
@@ -18,6 +35,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+// playlist description
+// TODO RESIZE WITH BOTTOM FIXED
+html.mobile .playlistInfo-container {
+  flex-direction: column;
+  position: static;
+  width: 100%;
+  padding: 0;
 }
 
 .playlistInfo-container {
@@ -40,9 +66,6 @@
 
 .playlistData-container {
   display: flex;
+  align-items: center;
   gap: .8rem;
-}
-
-.playlistSeparator {
-  color: $color-gray-300;
 }

@@ -1,7 +1,7 @@
 let device = document.querySelector('html')
-let vw = window.innerWidth
+let vw = window.matchMedia('(max-width: 700px)').matches
 
-if(vw < 700) {
+if(vw) {
   device.classList.add('mobile')
   device.classList.remove('desktop')
 } else {

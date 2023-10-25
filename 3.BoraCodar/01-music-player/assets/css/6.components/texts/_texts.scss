@@ -10,8 +10,7 @@
   @include regular-subheadline
 }
 
-.playlistLenght,
-.playlistSeparator, 
+.playlistLenght, 
 .playlistDuration {
   color: $color-gray-200;
   @include regular-footnote;

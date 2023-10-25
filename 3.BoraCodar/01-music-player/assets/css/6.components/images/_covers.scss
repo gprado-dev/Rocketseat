@@ -1,6 +1,7 @@
 // main cover
 html.mobile .cover {
-  width: 32.8rem;
+  width: 100%;
+  max-width: 70rem;
   height: 24rem;
   border-radius: $radius-md;
   object-fit: cover;
@@ -11,7 +12,7 @@ html.desktop .cover {
   height: 17.6rem;
   border-radius: $radius-sm;
   object-fit: cover;
-  
+
   box-shadow: $shadow-cover;
 }
 
