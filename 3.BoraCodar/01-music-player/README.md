@@ -1,9 +1,9 @@
-<strong> Projeto 13 da trilha Explorer</strong>
+<strong>Projeto 01 do desafio #BoraCodar</strong>
 
 ## 👁 Preview
 
 <p align="center">
-  <img alt="Projeto 13 da trilha Explorer" src=".github/preview.png" width="100%">
+  <img alt="Projeto 01 do desafio #BoraCodar" src=".github/preview.png" width="100%">
 </p>
 
 ## 🚀 Tecnologias
@@ -17,4 +17,4 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-O projeto em questão faz parte do Intensivão (revisão dos Stages 01 ao 04), da trilha Explorer, promovida pela <a href="https://rocketseat.com.br/" target="_blank">Rocketseat</a>.
+O projeto em questão faz parte da série de desafios #BoraCodar, promovida pela <a href="https://rocketseat.com.br/" target="_blank">Rocketseat</a>.
