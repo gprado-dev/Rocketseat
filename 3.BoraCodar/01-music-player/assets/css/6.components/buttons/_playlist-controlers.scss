@@ -7,6 +7,8 @@
   background-color: transparent;
   border: none;
   background-image: url(../img/icon-controls-play-64.svg);
+
+  transition: $transition-buttons;
 }
 
 .playlistControlers-pause {
@@ -18,6 +20,13 @@
   background-color: transparent;
   border: none;
   background-image: url(../img/icon-controls-pause-64.svg);
+
+  transition: $transition-buttons;
+}
+
+.playlistControlers-play:hover,
+.playlistControlers-pause:hover {
+  filter: $glow-button-slow;
 }
 
 .playlistControlers-random {

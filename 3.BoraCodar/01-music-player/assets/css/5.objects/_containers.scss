@@ -76,13 +76,20 @@ html.mobile .playlistInfo-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 1.6rem;
+}
+
+html.desktop .playlistControlers-container {
+  margin-top: calc(24rem + 3.2rem);
 }
 
 .playlistControlers-containerLeft {
   display: flex;
   align-items: center;
   gap: .8rem;
+}
+
+html.mobile .playlistControlers-containerRight {
+  visibility: hidden;
 }
 
 .playlistControlers-containerRight {

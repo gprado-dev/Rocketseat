@@ -225,13 +225,20 @@ html.mobile .playlistInfo-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 1.6rem;
+}
+
+html.desktop .playlistControlers-container {
+  margin-top: 27.2rem;
 }
 
 .playlistControlers-containerLeft {
   display: flex;
   align-items: center;
   gap: 0.8rem;
+}
+
+html.mobile .playlistControlers-containerRight {
+  visibility: hidden;
 }
 
 .playlistControlers-containerRight {
@@ -273,6 +280,7 @@ html.mobile .playlistInfo-container {
   background-color: transparent;
   border: none;
   background-image: url(../img/icon-controls-play-64.svg);
+  transition: all 400ms;
 }
 
 .playlistControlers-pause {
@@ -282,6 +290,12 @@ html.mobile .playlistInfo-container {
   background-color: transparent;
   border: none;
   background-image: url(../img/icon-controls-pause-64.svg);
+  transition: all 400ms;
+}
+
+.playlistControlers-play:hover,
+.playlistControlers-pause:hover {
+  filter: drop-shadow(4px 4px 32px rgba(255, 214, 10, 0.4)) drop-shadow(0px 0px 10px rgba(255, 214, 10, 0.4));
 }
 
 .playlistControlers-random {
@@ -333,6 +347,7 @@ select:-webkit-autofill:active {
 }
 
 input[type=search] {
+  width: 22.4rem;
   background-color: #201934;
   color: #F2F2F3;
   font-family: "SF Pro Text Regular";
@@ -341,11 +356,20 @@ input[type=search] {
   font-style: normal;
   line-height: 1.8rem; /* 138.462% */
   letter-spacing: -0.078px;
-  padding: 1.2rem 1.2rem 1.2rem 3.6rem;
+  padding: 1.2rem 0.8rem 1.2rem 3.6rem;
   border: none;
   border-radius: 0.8rem;
   outline: transparent;
+  caret-color: #FFCC00;
   transition: all 100ms;
+}
+
+input[type=search]::-moz-placeholder {
+  color: #7D7986;
+}
+
+input[type=search]::placeholder {
+  color: #7D7986;
 }
 
 input[type=search]:hover {
@@ -359,6 +383,7 @@ input[type=search]:focus {
 input[type=search]::-webkit-search-cancel-button {
   -webkit-appearance: none;
           appearance: none;
+  background-color: transparent;
   width: 2.4rem;
   height: 2.4rem;
   border-radius: 50%;
@@ -375,14 +400,6 @@ input[type=search]::-webkit-search-cancel-button:hover {
   border-radius: 50%;
 }
 
-input[type=search]::-moz-placeholder {
-  color: #7D7986;
-}
-
-input[type=search]::placeholder {
-  color: #7D7986;
-}
-
 .icon-search {
   position: absolute;
   top: calc((100% - 1.6rem) / 2);
@@ -393,12 +410,6 @@ input[type=search]::placeholder {
 }
 
 input[type=search]:focus + .icon-search {
-  position: absolute;
-  top: calc((100% - 1.6rem) / 2);
-  left: 1.2rem;
-  width: 1.6rem;
-  height: 1.6rem;
-  z-index: 10;
   background-image: url(../img/icon-inputs-search-focus-16.svg);
 }
 

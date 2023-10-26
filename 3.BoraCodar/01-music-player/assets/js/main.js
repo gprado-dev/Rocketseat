@@ -12,12 +12,14 @@ if(vw) {
 
 
 // clear placeholder inputs when focus
-let inputSearch = document.getElementById('search')
+  let inputSearch = document.getElementById('search')
 
-document.ready(function() {
-  "use strict";
-  ("inputSearch").on("focus",function(){
-    inputSearch.placeholder = '';
+  inputSearch.addEventListener("focus", () => {
+  inputSearch.placeholder = '';
   });
-});
 
+  inputSearch.addEventListener("blur", () => {
+  inputSearch.placeholder = 'Encontrar nesta página';
+  });
+
+  console.log(window.innerWidth)
