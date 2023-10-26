@@ -65,9 +65,21 @@
         </div>
 
         <div class="playlistControlers-container">
-          <button><div class="playlistControlers-play"></div></button>
-          <button><div class="playlistControlers-pause"></div></button>
-          <button><div class="playlistControlers-random"></div></button>
+          <div class="playlistControlers-containerLeft">
+            <button class="playlistControlers-play"></button>
+            <button class="playlistControlers-pause"></button>
+            <button class="playlistControlers-random"></button>
+          </div>
+
+          <div class="playlistControlers-containerRight">
+            <div class="input-wrapper">
+              <label class="sr-only" for="search">Pesquisar</label>
+              <span class="icon-search"></span>
+              <input type="search" name="search" id="search" placeholder="Encontrar nesta página">
+            </div>
+            <button class="playlistControlers-filter">Título</button>
+          </div>
+
         </div>
 
       </section>

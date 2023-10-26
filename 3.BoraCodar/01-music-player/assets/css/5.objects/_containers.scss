@@ -69,3 +69,28 @@ html.mobile .playlistInfo-container {
   align-items: center;
   gap: .8rem;
 }
+
+// playlist controlers
+.playlistControlers-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.6rem;
+}
+
+.playlistControlers-containerLeft {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+
+.playlistControlers-containerRight {
+  display: flex;
+  gap: 2.4rem;
+}
+
+// inputs
+.input-wrapper {
+  position: relative;
+}

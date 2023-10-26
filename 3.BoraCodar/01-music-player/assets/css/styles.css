@@ -220,6 +220,29 @@ html.mobile .playlistInfo-container {
   gap: 0.8rem;
 }
 
+.playlistControlers-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.6rem;
+}
+
+.playlistControlers-containerLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.playlistControlers-containerRight {
+  display: flex;
+  gap: 2.4rem;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -244,11 +267,30 @@ html.mobile .playlistInfo-container {
 }
 
 .playlistControlers-play {
+  cursor: pointer;
   width: 6.4rem;
   height: 6.4rem;
-  background-color: none;
+  background-color: transparent;
   border: none;
   background-image: url(../img/icon-controls-play-64.svg);
+}
+
+.playlistControlers-pause {
+  cursor: pointer;
+  width: 6.4rem;
+  height: 6.4rem;
+  background-color: transparent;
+  border: none;
+  background-image: url(../img/icon-controls-pause-64.svg);
+}
+
+.playlistControlers-random {
+  cursor: pointer;
+  width: 3.2rem;
+  height: 3.2rem;
+  background-color: transparent;
+  border: none;
+  background-image: url(../img/icon-controls-random-32.svg);
 }
 
 input:required:valid {
@@ -263,22 +305,11 @@ input:required:invalid:not(:placeholder-shown) {
   border: 1.5px solid #CC2937;
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  border: 1px solid green;
-  -webkit-text-fill-color: green;
-  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
-  -webkit-transition: background-color 5000s ease-in-out 0s;
-  transition: background-color 5000s ease-in-out 0s;
-}
-
 input:focus,
 textarea:focus,
 select:focus {
-  outline: none;
-  border: X px solid transparent;
+  outline: 0.1rem solid #FFCC00;
+  border: none;
   transition: var(--transition-inputs);
 }
 
@@ -294,11 +325,81 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus,
 select:-webkit-autofill:active {
-  border: 1px solid green;
-  -webkit-text-fill-color: green;
-  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  outline: 1px solid #FFCC00;
+  -webkit-text-fill-color: #F2F2F3;
+  -webkit-box-shadow: 0 0 0px 1000px #201934 inset;
   -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
+}
+
+input[type=search] {
+  background-color: #201934;
+  color: #F2F2F3;
+  font-family: "SF Pro Text Regular";
+  font-size: 1.3rem;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.8rem; /* 138.462% */
+  letter-spacing: -0.078px;
+  padding: 1.2rem 1.2rem 1.2rem 3.6rem;
+  border: none;
+  border-radius: 0.8rem;
+  outline: transparent;
+  transition: all 100ms;
+}
+
+input[type=search]:hover {
+  outline: 0.2rem solid #30254D;
+}
+
+input[type=search]:focus {
+  outline: 0.2rem solid #FFCC00;
+}
+
+input[type=search]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+          appearance: none;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background-image: url(../img/icon-inputs-search-cancel-16.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+
+input[type=search]::-webkit-search-cancel-button:hover {
+  cursor: pointer;
+  background-color: #30254D;
+  border-radius: 50%;
+}
+
+input[type=search]::-moz-placeholder {
+  color: #7D7986;
+}
+
+input[type=search]::placeholder {
+  color: #7D7986;
+}
+
+.icon-search {
+  position: absolute;
+  top: calc((100% - 1.6rem) / 2);
+  left: 1.2rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  background-image: url(../img/icon-inputs-search-normal-16.svg);
+}
+
+input[type=search]:focus + .icon-search {
+  position: absolute;
+  top: calc((100% - 1.6rem) / 2);
+  left: 1.2rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  z-index: 10;
+  background-image: url(../img/icon-inputs-search-focus-16.svg);
 }
 
 html.mobile .cover {

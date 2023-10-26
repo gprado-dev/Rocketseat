@@ -1,8 +1,32 @@
 .playlistControlers-play {
+  cursor: pointer;
+  
   width: 6.4rem;
   height: 6.4rem;
 
-  background-color: none;
+  background-color: transparent;
   border: none;
   background-image: url(../img/icon-controls-play-64.svg);
+}
+
+.playlistControlers-pause {
+  cursor: pointer;
+  
+  width: 6.4rem;
+  height: 6.4rem;
+
+  background-color: transparent;
+  border: none;
+  background-image: url(../img/icon-controls-pause-64.svg);
+}
+
+.playlistControlers-random {
+  cursor: pointer;
+  
+  width: 3.2rem;
+  height: 3.2rem;
+
+  background-color: transparent;
+  border: none;
+  background-image: url(../img/icon-controls-random-32.svg);
 }
