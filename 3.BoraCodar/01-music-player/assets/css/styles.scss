@@ -1,37 +1,9 @@
 @import 
-  './1.settings/colors',
-  './1.settings/global',
-  './1.settings/transitions',
-
-  './2.tools/animations',
-  './2.tools/typography',
-
-  './3.generics/reset',
-
-  './4.elements/body',
-  './4.elements/header',
-  './4.elements/links',
-  './4.elements/selection',
-
-  './5.objects/anchors-scroll',
-  './5.objects/containers',
-  './5.objects/sr-only',
-  './5.objects/visibility',
-  
-  // buttons
+  './1.settings/index',
+  './2.tools/index',
+  './3.generics/index',
+  './4.elements/index',
+  './5.objects/index',
   './6.components/index',
-  './6.components/buttons/buttons-primary',
-  './6.components/buttons/buttons-secondary',
-  './6.components/buttons/playlist-controlers',
-  // inputs
-  './6.components/inputs/inputs-required',
-  './6.components/inputs/inputs',
-  './6.components/inputs/search-bar/index',
-  './6.components/inputs/sliders',
-  // images
-  './6.components/images/covers',
-  // separators
-  './6.components/separators/separators',
-   // texts
-   './6.components/texts/texts'
+  './7.trumps/index'
 ;
