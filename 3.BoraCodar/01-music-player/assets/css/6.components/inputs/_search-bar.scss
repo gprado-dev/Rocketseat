@@ -1,62 +1,29 @@
-// search in desktop
-input[type="search"] {
-  width: 22.4rem;
-  background-color: $color-primary-base;
-  color: $color-gray-100;
-  @include regular-footnote;
-  padding: 1.2rem .8rem 1.2rem calc(1.2rem + 1.6rem + .8rem);
-  border: none;
-  border-radius: $radius-md;
-  outline: transparent;
-
-  caret-color: $color-secondary-base;
-
-  transition: $transition-inputs;
-}
-
-input[type="search"]::placeholder {
-  color: $color-gray-300;
-}
-
+// global
 input[type="search"]:hover {
   outline: .2rem solid $color-primary-light;
 }
 
 input[type="search"]:focus {
   outline: .2rem solid $color-secondary-base;
+  width: 22.4rem;
 }
 
-// cancel button
-input[type="search"]::-webkit-search-cancel-button {
-  appearance: none;
-  background-color: transparent;
-  width: 2.4rem;
-  height: 2.4rem;
+.button-search {
+  width: 4rem;
+  height: 4rem;
+  border: none;
   border-radius: 50%;
-  background-image: url(../img/icon-inputs-search-cancel-16.svg);
+  background-image: url(../img/icon-inputs-search-normal-24.svg);
   background-position: center;
   background-repeat: no-repeat;
+  background-color: transparent;
+
+  cursor: pointer;
 
   transition: $transition-buttons;
 }
 
-input[type="search"]::-webkit-search-cancel-button:hover {
-  cursor: pointer;
+.button-search:hover {
   background-color: $color-primary-light;
-  border-radius: 50%;
-}
-
-
-// icon
-.icon-search {
-  position: absolute;
-  top: calc((100% - 1.6rem) / 2);
-  left: 1.2rem;
-  width: 1.6rem;
-  height: 1.6rem;
-  background-image: url(../img/icon-inputs-search-normal-16.svg);
-}
-
-input[type="search"]:focus + .icon-search {
-  background-image: url(../img/icon-inputs-search-focus-16.svg);
+  background-image: url(../img/icon-inputs-search-focus-24.svg);
 }
