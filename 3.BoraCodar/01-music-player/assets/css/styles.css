@@ -377,8 +377,7 @@ input:required:invalid:not(:placeholder-shown) {
   border: 1.5px solid #CC2937;
 }
 
-input[type=search].search-close {
-  width: 0;
+input[type=search] {
   background-color: #201934;
   color: #F2F2F3;
   font-family: "SF Pro Text Regular";
@@ -394,23 +393,21 @@ input[type=search].search-close {
   caret-color: #FFCC00;
   transition: all 100ms, width 600ms;
 }
-
+input[type=search].search-close {
+  width: 0;
+}
+input[type=search].search-hidden {
+  display: none;
+}
 input[type=search].search-open {
   width: 22.4rem;
-  background-color: #201934;
-  color: #F2F2F3;
-  font-family: "SF Pro Text Regular";
-  font-size: 1.3rem;
-  font-weight: normal;
-  font-style: normal;
-  line-height: 1.8rem; /* 138.462% */
-  letter-spacing: -0.078px;
-  padding: 1.2rem 0.8rem 1.2rem 4.4rem;
-  border: none;
-  border-radius: 0.8rem;
-  outline: transparent;
-  caret-color: #FFCC00;
-  transition: all 100ms, width 600ms;
+}
+input[type=search]:hover {
+  outline: 0.2rem solid #30254D;
+}
+input[type=search]:focus {
+  outline: 0.2rem solid #FFCC00;
+  width: 22.4rem;
 }
 
 input[type=search]::-webkit-search-cancel-button {
@@ -436,7 +433,7 @@ input[type=search]::-webkit-search-cancel-button:hover {
 .icon-search {
   position: absolute;
   top: calc((100% - 2.4rem) / 2);
-  left: 1.2rem;
+  left: 5.2rem;
   width: 2.4rem;
   height: 2.4rem;
   background-image: url(../img/icon-inputs-search-focus-24.svg);
@@ -448,6 +445,24 @@ input[type=search]::-moz-placeholder {
 
 input[type=search]::placeholder {
   color: #7D7986;
+}
+
+.button-search {
+  width: 4rem;
+  height: 4rem;
+  border: none;
+  border-radius: 50%;
+  background-image: url("../img/icon-inputs-search-normal-24.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 400ms;
+}
+
+.button-search:hover {
+  background-color: #30254D;
+  background-image: url("../img/icon-inputs-search-focus-24.svg");
 }
 
 .separator-dot-sm {

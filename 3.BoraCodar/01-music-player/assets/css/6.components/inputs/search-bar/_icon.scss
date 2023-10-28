@@ -1,7 +1,7 @@
 .icon-search {
   position: absolute;
   top: calc((100% - $icon-size-md) / 2);
-  left: 1.2rem;
+  left: calc(4rem + 1.2rem);
   width: $icon-size-md;
   height: $icon-size-md;
   background-image: url(../img/icon-inputs-search-focus-24.svg);

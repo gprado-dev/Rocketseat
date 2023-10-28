@@ -1,5 +1,4 @@
-input[type="search"].search-close {
-  width: 0;
+input[type="search"] {
   background-color: $color-primary-base;
   color: $color-gray-100;
   @include regular-footnote;
@@ -7,23 +6,29 @@ input[type="search"].search-close {
   border: none;
   border-radius: $radius-md;
   outline: transparent;
-
+  
   caret-color: $color-secondary-base;
 
   transition: $transition-inputs, $transition-inputs-search;
-}
+  
+  &.search-close {
+    width: 0;
+  }
 
-input[type="search"].search-open {
-  width: 22.4rem;
-  background-color: $color-primary-base;
-  color: $color-gray-100;
-  @include regular-footnote;
-  padding: 1.2rem .8rem 1.2rem calc(1.2rem + $icon-size-md + .8rem);
-  border: none;
-  border-radius: $radius-md;
-  outline: transparent;
+  &.search-hidden {
+    display: none;
+  }
 
-  caret-color: $color-secondary-base;
+  &.search-open {
+    width: 22.4rem;
+  }
 
-  transition: $transition-inputs, $transition-inputs-search;
+  &:hover {
+    outline: .2rem solid $color-primary-light;
+  }
+  
+  &:focus {
+    outline: .2rem solid $color-secondary-base;
+    width: 22.4rem;
+  }
 }

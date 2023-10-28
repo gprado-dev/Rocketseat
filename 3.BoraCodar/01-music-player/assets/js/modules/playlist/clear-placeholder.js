@@ -1,5 +1,6 @@
+export let inputSearch = document.getElementById('search')
+
 export function clearPlaceholder() {
-  let inputSearch = document.getElementById('search')
   let placeholderMessage = 'Buscar na playlist'
 
   inputSearch.placeholder = placeholderMessage;
