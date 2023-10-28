@@ -1,0 +1,27 @@
+@mixin responsiveness($device) {
+  @if $device == device-phone-only {
+      @media only screen and (max-width: 599px) {
+          @content;
+      }
+  }
+  @else if $device == device-tablet-portrait {
+      @media only screen and (min-width: 600px) {
+          @content;            
+      }
+  }
+  @else if $device == device-tablet-landscape {
+      @media only screen and (min-width: 900px){
+          @content;
+      }
+  }
+  @else if $device == device-desktop {
+      @media only screen and (min-width: 1200px){
+          @content;
+      }
+  }
+  @else if $device == device-big-desktop {
+      @media only screen and (min-width: 1800px){
+          @content;
+      }
+  }
+}

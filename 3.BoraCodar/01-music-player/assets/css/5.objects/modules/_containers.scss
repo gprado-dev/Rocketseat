@@ -1,61 +1,15 @@
 // main screen
-html.desktop main {
-  margin-inline: auto;
-  width: 100%;
-  max-width: calc($grid-max-width + 4.8rem);
-
-  padding-inline: 2.4rem;
-}
-
+// GLOBALS
 // playlist
-.playlist {
+
+.playlistHeader {
+  background-color: $color-primary-dark;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   position: relative;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  max-width: $grid-max-width;
-  margin-inline: auto;
-}
-
-html.mobile .playlist {
-  padding-inline: 1.6rem;
-  flex-direction: column;
-}
-
-// container wide cover
-.d-cover-container {
-  position: absolute;
-  z-index: -1;
-
-  width: 100%;
-  height: 24rem;
-  border-radius: $radius-md;
-  overflow: hidden;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-// playlist description
-// TODO RESIZE WITH BOTTOM FIXED
-html.mobile .playlistInfo-container {
-  flex-direction: column;
-  position: static;
-  width: 100%;
-  padding: 0;
-}
-
-.playlistInfo-container {
-  position: absolute;
-  left: 0;
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
-
-  padding-top: 8rem;
-  padding-left: 10.4rem;
-  padding-right: 1.6rem;
 }
 
 .playlistInfo-text-container {
@@ -72,14 +26,9 @@ html.mobile .playlistInfo-container {
 
 // playlist controlers
 .playlistControlers-container {
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-html.desktop .playlistControlers-container {
-  margin-top: calc(24rem + 3.2rem);
 }
 
 .playlistControlers-containerLeft {
@@ -88,18 +37,86 @@ html.desktop .playlistControlers-container {
   gap: .8rem;
 }
 
-html.mobile .playlistControlers-containerRight {
-  visibility: hidden;
-}
-
-.playlistControlers-containerRight {
-  display: flex;
-  gap: 2.4rem;
-}
-
 // inputs
 .input-wrapper {
   position: relative;
   display: flex;
   align-items: center;
+}
+
+@include responsiveness(device-phone-only) {
+  .playlistHeader {
+    height: 7.2rem;
+    width: 100%;
+  }  
+
+  .playlistBody {
+    padding-inline: 1.6rem;
+    flex-direction: column;
+  }
+
+  .playlistInfo-container {
+    display: flex;
+    gap: 1.6rem;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 1.6rem;
+  }
+
+  .playlistControlers-containerRight {
+    display: none;
+  }
+}
+
+@include responsiveness(device-tablet-portrait) {
+  .playlistHeader {
+    height: 9.6rem;
+    max-width: $grid-max-width;
+    margin-inline: auto;
+  }
+  
+  .main-container {
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .playlistCover-container {
+    position: absolute;
+    z-index: -1;
+  
+    width: 100%;
+    height: 24rem;
+    overflow: hidden;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .playlistContent {
+    width: 100%;
+    max-width: calc($grid-max-width + 6.4rem);
+    margin-inline: auto;
+    padding-inline: 3.2rem;
+  }
+
+  .playlistInfo-container {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    padding-top: 8rem;
+  }
+
+  .playlistInfo-img-container {
+    width: 17.6rem;
+  }
+
+  .playlistControlers-container {
+    margin-top: 1.6rem;
+  }
+
+  .playlistControlers-containerRight {
+    display: flex;
+    gap: 2.4rem;
+  }
 }

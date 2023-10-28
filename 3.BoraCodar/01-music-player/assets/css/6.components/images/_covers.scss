@@ -1,32 +1,35 @@
-// main cover
-html.mobile .cover {
-  width: 100%;
-  max-width: 70rem;
-  height: 24rem;
-  border-radius: $radius-md;
-  object-fit: cover;
+@include responsiveness(device-phone-only) {
+  // main cover
+  .cover {
+    width: 100%;
+    max-width: 70rem;
+    height: 24rem;
+    border-radius: $radius-md;
+    object-fit: cover;
+  }
+
+  // wide cover
+  .playlistCover {
+    display: none;
+  }
 }
 
-html.desktop .cover {
-  width: 17.6rem;
-  height: 17.6rem;
-  border-radius: $radius-sm;
-  object-fit: cover;
+@include responsiveness(device-tablet-portrait) {
+  // main cover
+  .cover {
+    width: 17.6rem;
+    height: 17.6rem;
+    border-radius: $radius-sm;
+    object-fit: cover;
+  
+    box-shadow: $shadow-cover;
+  }
 
-  box-shadow: $shadow-cover;
-}
-
-// cover wide for desktop
-html.mobile .d-cover {
-  display: none;
-}
-
-html.desktop .d-cover {
-  width: 105%;
-  height: 24rem;
-  object-fit: cover;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url('../img/img-cover.jpg'), lightgray 50% / cover no-repeat;
-  background-position: center;
-
-  filter: blur(15px);
+  // wide cover
+  .playlistCover {
+    width: 100%;
+    height: 24rem;
+    object-fit: cover;
+    background: linear-gradient(180deg, $color-primary-lightest 0%, rgba(0, 0, 0, 0.6) 100%), $color-primary-lightest;
+  }
 }

@@ -1,4 +1,3 @@
-/* 10px */
 @keyframes nameHere {}
 @font-face {
   font-family: "SF Pro Text Regular";
@@ -43,73 +42,13 @@
 }
 
 body {
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
   background: #161122;
   color: #BEBCC2;
-}
-
-header {
-  background-color: #161122;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-html.mobile header {
-  height: 7.2rem;
-  width: 100%;
-}
-
-html.desktop header {
-  height: 9.6rem;
-  max-width: 121.6rem;
-  margin-inline: auto;
-}
-
-.logo {
-  width: auto;
-  height: clamp(1.6rem, 1% + 2vw, 2.4rem);
-}
-
-html.desktop .m-btnLock,
-html.mobile .d-btnLock {
-  display: none;
-}
-
-.d-btnLock, .m-btnLock {
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-  border-radius: 50%;
-  position: absolute;
-  right: 1.6rem;
-  transition: all 400ms;
-}
-
-.m-btnLock {
-  width: 4rem;
-  height: 4rem;
-  background-image: url("../img/icon-lock.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.d-btnLock {
-  width: 4rem;
-  height: 4rem;
-  background-image: url("../img/icon-unlock.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.d-btnLock:hover {
-  background-color: #30254D;
-  background-image: url("../img/icon-lock.svg");
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 /* unvisited link */
@@ -161,55 +100,12 @@ html {
   scroll-behavior: smooth;
 }
 
-html.desktop main {
-  margin-inline: auto;
-  width: 100%;
-  max-width: 126.4rem;
-  padding-inline: 2.4rem;
-}
-
-.playlist {
+.playlistHeader {
+  background-color: #161122;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  max-width: 121.6rem;
-  margin-inline: auto;
-}
-
-html.mobile .playlist {
-  padding-inline: 1.6rem;
-  flex-direction: column;
-}
-
-.d-cover-container {
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 24rem;
-  border-radius: 0.8rem;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-html.mobile .playlistInfo-container {
-  flex-direction: column;
-  position: static;
-  width: 100%;
-  padding: 0;
-}
-
-.playlistInfo-container {
-  position: absolute;
-  left: 0;
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
-  padding-top: 8rem;
-  padding-left: 10.4rem;
-  padding-right: 1.6rem;
 }
 
 .playlistInfo-text-container {
@@ -225,14 +121,9 @@ html.mobile .playlistInfo-container {
 }
 
 .playlistControlers-container {
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-html.desktop .playlistControlers-container {
-  margin-top: 27.2rem;
 }
 
 .playlistControlers-containerLeft {
@@ -241,21 +132,75 @@ html.desktop .playlistControlers-container {
   gap: 0.8rem;
 }
 
-html.mobile .playlistControlers-containerRight {
-  visibility: hidden;
-}
-
-.playlistControlers-containerRight {
-  display: flex;
-  gap: 2.4rem;
-}
-
 .input-wrapper {
   position: relative;
   display: flex;
   align-items: center;
 }
 
+@media only screen and (max-width: 599px) {
+  .playlistHeader {
+    height: 7.2rem;
+    width: 100%;
+  }
+  .playlistBody {
+    padding-inline: 1.6rem;
+    flex-direction: column;
+  }
+  .playlistInfo-container {
+    display: flex;
+    gap: 1.6rem;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 1.6rem;
+  }
+  .playlistControlers-containerRight {
+    display: none;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .playlistHeader {
+    height: 9.6rem;
+    max-width: 121.6rem;
+    margin-inline: auto;
+  }
+  .main-container {
+    margin-inline: auto;
+    width: 100%;
+  }
+  .playlistCover-container {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 24rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .playlistContent {
+    width: 100%;
+    max-width: 128rem;
+    margin-inline: auto;
+    padding-inline: 3.2rem;
+  }
+  .playlistInfo-container {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    padding-top: 8rem;
+  }
+  .playlistInfo-img-container {
+    width: 17.6rem;
+  }
+  .playlistControlers-container {
+    margin-top: 1.6rem;
+  }
+  .playlistControlers-containerRight {
+    display: flex;
+    gap: 2.4rem;
+  }
+}
 .sr-only {
   position: absolute;
   width: 1px;
@@ -294,7 +239,12 @@ html.mobile .playlistControlers-containerRight {
   background-color: transparent;
   border: none;
   background-image: url(../img/icon-controls-play-64.svg);
+  background-position: center;
+  background-size: cover;
   transition: all 400ms;
+}
+.playlistControlers-play:hover {
+  filter: drop-shadow(4px 4px 32px rgba(255, 214, 10, 0.4)) drop-shadow(0px 0px 10px rgba(255, 214, 10, 0.4));
 }
 
 .playlistControlers-pause {
@@ -306,8 +256,6 @@ html.mobile .playlistControlers-containerRight {
   background-image: url(../img/icon-controls-pause-64.svg);
   transition: all 400ms;
 }
-
-.playlistControlers-play:hover,
 .playlistControlers-pause:hover {
   filter: drop-shadow(4px 4px 32px rgba(255, 214, 10, 0.4)) drop-shadow(0px 0px 10px rgba(255, 214, 10, 0.4));
 }
@@ -321,18 +269,75 @@ html.mobile .playlistControlers-containerRight {
   background-image: url(../img/icon-controls-random-32.svg);
 }
 
-input:required:valid {
-  border: 1.5px solid #04D361;
+.btnLock {
+  cursor: pointer;
+  width: 4rem;
+  height: 4rem;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  transition: all 400ms;
 }
 
-input:required:invalid:not(:-moz-placeholder-shown) {
-  border: 1.5px solid #CC2937;
+@media only screen and (max-width: 599px) {
+  .btnLock {
+    background-image: url("../img/icons/icon-lock.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    right: 1.6rem;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .btnLock {
+    background-image: url("../img/icons/icon-unlock.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    right: 3.2rem;
+  }
+  .btnLock:hover {
+    background-color: #30254D;
+    background-image: url("../img/icons/icon-lock.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+.logo {
+  width: auto;
+  height: clamp(1.6rem, 1% + 2vw, 2.4rem);
 }
 
-input:required:invalid:not(:placeholder-shown) {
-  border: 1.5px solid #CC2937;
+@media only screen and (max-width: 599px) {
+  .cover {
+    width: 100%;
+    max-width: 70rem;
+    height: 24rem;
+    border-radius: 0.8rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .playlistCover {
+    display: none;
+  }
 }
-
+@media only screen and (min-width: 600px) {
+  .cover {
+    width: 17.6rem;
+    height: 17.6rem;
+    border-radius: 0.4rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.25);
+  }
+  .playlistCover {
+    width: 100%;
+    height: 24rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+    background: linear-gradient(180deg, #633BBC 0%, rgba(0, 0, 0, 0.6) 100%), #633BBC;
+  }
+}
 input:focus,
 textarea:focus,
 select:focus {
@@ -360,63 +365,89 @@ select:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-input[type=search]:hover {
-  outline: 0.2rem solid #30254D;
+input:required:valid {
+  border: 1.5px solid #04D361;
 }
 
-input[type=search]:focus {
-  outline: 0.2rem solid #FFCC00;
-  width: 22.4rem;
+input:required:invalid:not(:-moz-placeholder-shown) {
+  border: 1.5px solid #CC2937;
 }
 
-.button-search {
-  width: 4rem;
-  height: 4rem;
+input:required:invalid:not(:placeholder-shown) {
+  border: 1.5px solid #CC2937;
+}
+
+input[type=search].search-close {
+  width: 0;
+  background-color: #201934;
+  color: #F2F2F3;
+  font-family: "SF Pro Text Regular";
+  font-size: 1.3rem;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.8rem; /* 138.462% */
+  letter-spacing: -0.078px;
+  padding: 1.2rem 0.8rem 1.2rem 4.4rem;
   border: none;
+  border-radius: 0.8rem;
+  outline: transparent;
+  caret-color: #FFCC00;
+  transition: all 100ms, width 600ms;
+}
+
+input[type=search].search-open {
+  width: 22.4rem;
+  background-color: #201934;
+  color: #F2F2F3;
+  font-family: "SF Pro Text Regular";
+  font-size: 1.3rem;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.8rem; /* 138.462% */
+  letter-spacing: -0.078px;
+  padding: 1.2rem 0.8rem 1.2rem 4.4rem;
+  border: none;
+  border-radius: 0.8rem;
+  outline: transparent;
+  caret-color: #FFCC00;
+  transition: all 100ms, width 600ms;
+}
+
+input[type=search]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  width: 2.4rem;
+  height: 2.4rem;
   border-radius: 50%;
-  background-image: url(../img/icon-inputs-search-normal-24.svg);
+  background-image: url(../img/icon-inputs-search-cancel-16.svg);
   background-position: center;
   background-repeat: no-repeat;
-  background-color: transparent;
-  cursor: pointer;
+  -webkit-transition: all 400ms;
   transition: all 400ms;
 }
 
-.button-search:hover {
+input[type=search]::-webkit-search-cancel-button:hover {
+  cursor: pointer;
   background-color: #30254D;
+  border-radius: 50%;
+}
+
+.icon-search {
+  position: absolute;
+  top: calc((100% - 2.4rem) / 2);
+  left: 1.2rem;
+  width: 2.4rem;
+  height: 2.4rem;
   background-image: url(../img/icon-inputs-search-focus-24.svg);
 }
 
-html.mobile .cover {
-  width: 100%;
-  max-width: 70rem;
-  height: 24rem;
-  border-radius: 0.8rem;
-  -o-object-fit: cover;
-     object-fit: cover;
+input[type=search]::-moz-placeholder {
+  color: #7D7986;
 }
 
-html.desktop .cover {
-  width: 17.6rem;
-  height: 17.6rem;
-  border-radius: 0.4rem;
-  -o-object-fit: cover;
-     object-fit: cover;
-  box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.25);
-}
-
-html.mobile .d-cover {
-  display: none;
-}
-
-html.desktop .d-cover {
-  width: 105%;
-  height: 24rem;
-  -o-object-fit: cover;
-     object-fit: cover;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url("../img/img-cover.jpg"), lightgray 50%/cover no-repeat;
-  background-position: center;
-  filter: blur(15px);
+input[type=search]::placeholder {
+  color: #7D7986;
 }
 
 .separator-dot-sm {
@@ -427,14 +458,24 @@ html.desktop .d-cover {
   border-radius: 50%;
 }
 
-.playlistTitle {
-  color: #F2F2F3;
-  font-family: "SF Pro Display Bold";
-  font-size: 3.4rem;
-  font-style: normal;
+.playlistDuration {
+  color: #BEBCC2;
+  font-family: "SF Pro Text Regular";
+  font-size: 1.3rem;
   font-weight: normal;
-  line-height: 4.1rem; /* 120.588% */
-  letter-spacing: 0.374px;
+  font-style: normal;
+  line-height: 1.8rem; /* 138.462% */
+  letter-spacing: -0.078px;
+}
+
+.playlistLenght {
+  color: #BEBCC2;
+  font-family: "SF Pro Text Regular";
+  font-size: 1.3rem;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.8rem; /* 138.462% */
+  letter-spacing: -0.078px;
 }
 
 .playlistParagraph {
@@ -447,13 +488,12 @@ html.desktop .d-cover {
   letter-spacing: -0.24px;
 }
 
-.playlistLenght,
-.playlistDuration {
-  color: #BEBCC2;
-  font-family: "SF Pro Text Regular";
-  font-size: 1.3rem;
-  font-weight: normal;
+.playlistTitle {
+  color: #F2F2F3;
+  font-family: "SF Pro Display Bold";
+  font-size: 3.4rem;
   font-style: normal;
-  line-height: 1.8rem; /* 138.462% */
-  letter-spacing: -0.078px;
+  font-weight: normal;
+  line-height: 4.1rem; /* 120.588% */
+  letter-spacing: 0.374px;
 }/*# sourceMappingURL=styles.css.map */
