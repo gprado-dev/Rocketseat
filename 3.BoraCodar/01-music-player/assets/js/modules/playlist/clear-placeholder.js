@@ -4,7 +4,7 @@ export function clearPlaceholder() {
 
   inputSearch.placeholder = placeholderMessage;
 
-  if (device.classList[0] == 'desktop') {
+  if (window.matchMedia('(min-width: 600px)').matches) {
     inputSearch.addEventListener("focus", () => {
     inputSearch.placeholder = '';
     });
