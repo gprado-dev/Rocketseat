@@ -6,6 +6,7 @@ input[type="search"] {
   border: none;
   border-radius: $radius-md;
   outline: transparent;
+  height: 4rem;
   
   caret-color: $color-secondary-base;
 
@@ -13,10 +14,9 @@ input[type="search"] {
   
   &.search-close {
     width: 0;
-  }
-
-  &.search-hidden {
-    display: none;
+    padding: 0;
+    outline: none;
+    border: none;
   }
 
   &.search-open {

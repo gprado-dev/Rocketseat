@@ -1,17 +1,19 @@
-export let inputSearch = document.getElementById('search')
+import * as Element from './elements.js'
 
-export function clearPlaceholder() {
-  let placeholderMessage = 'Buscar na playlist'
 
-  inputSearch.placeholder = placeholderMessage;
+export function clearPlaceholder(input, message) {    
+    // for desktop
+    if (window.matchMedia('(min-width: 600px)').matches) {
+      input.placeholder = message
 
-  if (window.matchMedia('(min-width: 600px)').matches) {
-    inputSearch.addEventListener("focus", () => {
-    inputSearch.placeholder = '';
-    });
+      input.addEventListener("focus", () => {
+        input.placeholder = message;
+      });
+  
+      input.addEventListener("blur", () => {
+        input.placeholder = message;
+      });
+    }
+  } 
 
-    inputSearch.addEventListener("blur", () => {
-    inputSearch.placeholder = placeholderMessage;
-    });
-  }
-} clearPlaceholder()
+  clearPlaceholder(Element.inputSearch, Element.placeholderSearchMessage)
