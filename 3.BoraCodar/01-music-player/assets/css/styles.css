@@ -453,6 +453,11 @@ body.on-play .playlistControlers-play {
   display: none;
 }
 
+@media only screen and (min-width: 600px) {
+  .playlistControlers-random {
+    display: none;
+  }
+}
 .playlistControlers-random {
   cursor: pointer;
   width: 3.2rem;

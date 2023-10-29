@@ -1,3 +1,9 @@
+@include responsiveness(device-tablet-portrait) {
+  .playlistControlers-random {
+    display: none;
+  }
+}
+
 .playlistControlers-random {
   cursor: pointer;
   
