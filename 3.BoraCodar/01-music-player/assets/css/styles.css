@@ -406,7 +406,7 @@ input:required:invalid:not(:placeholder-shown) {
   border: 1.5px solid #CC2937;
 }
 
-input[type=search] {
+.input-search {
   background-color: #201934;
   color: #F2F2F3;
   font-family: "SF Pro Text Regular";
@@ -420,22 +420,22 @@ input[type=search] {
   border-radius: 0.8rem;
   outline: transparent;
   height: 4rem;
-  caret-color: #FFCC00;
-  transition: all 100ms, width 600ms;
-}
-input[type=search].search-close {
   width: 0;
   padding: 0;
   outline: none;
   border: none;
+  caret-color: #FFCC00;
+  transition: all 100ms, width 600ms;
 }
-input[type=search].search-open {
+.input-search:focus {
   width: 22.4rem;
+  padding-left: 4.4rem;
+  transition: all 100ms, width 600ms;
 }
-input[type=search]:hover {
+.input-search:hover {
   outline: 0.2rem solid #30254D;
 }
-input[type=search]:focus {
+.input-search:focus {
   outline: 0.2rem solid #FFCC00;
   width: 22.4rem;
 }

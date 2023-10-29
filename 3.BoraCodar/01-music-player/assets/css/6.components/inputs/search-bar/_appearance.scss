@@ -1,4 +1,4 @@
-input[type="search"] {
+.input-search {
   background-color: $color-primary-base;
   color: $color-gray-100;
   @include regular-footnote;
@@ -7,20 +7,21 @@ input[type="search"] {
   border-radius: $radius-md;
   outline: transparent;
   height: 4rem;
+
+  width: 0;
+  padding: 0;
+  outline: none;
+  border: none;
   
   caret-color: $color-secondary-base;
 
   transition: $transition-inputs, $transition-inputs-search;
-  
-  &.search-close {
-    width: 0;
-    padding: 0;
-    outline: none;
-    border: none;
-  }
 
-  &.search-open {
+  &:focus {
     width: 22.4rem;
+    padding-left: calc(1.2rem + 2.4rem + .8rem);
+
+    transition: $transition-inputs, $transition-inputs-search;
   }
 
   &:hover {
