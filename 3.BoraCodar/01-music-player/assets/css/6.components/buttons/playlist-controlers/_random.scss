@@ -1,0 +1,27 @@
+.playlistControlers-random {
+  cursor: pointer;
+  
+  width: 3.2rem;
+  height: 3.2rem;
+
+  background-color: transparent;
+  border: none;
+  background-image: url(../img/icons/icon-controls-random-normal-32.svg);
+
+  transition: $transition-buttons;
+
+  &:hover {
+    background-image: url(../img/icons/icon-controls-random-hover-32.svg);
+  }
+}
+
+.playlistControlers-random.on {
+    background-image: url(../img/icons/icon-controls-random-active-32.svg);
+
+    transition: $transition-buttons;
+  
+  &:hover{
+    background-image: url(../img/icons/icon-controls-random-active-hover-32.svg);
+    filter: $glow-button-slow;
+  }
+}

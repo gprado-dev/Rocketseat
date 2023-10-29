@@ -1,0 +1,1 @@
+export let bodyTag = document.querySelector("body")

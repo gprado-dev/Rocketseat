@@ -1,0 +1,26 @@
+.playlistControlers-play {
+  cursor: pointer;
+
+  width: 6.4rem;
+  height: 6.4rem;
+
+  background-color: transparent;
+  border: none;
+  background-image: url(../img/icon-controls-play-64.svg);
+  background-position: center;
+  background-size: cover;
+
+  transition: $transition-buttons;
+
+  &:hover {
+    filter: $glow-button-slow;
+  }
+}
+
+body:not(.on-play) .playlistControlers-play {
+  display: block;
+}
+
+body.on-play .playlistControlers-play {
+  display: none;
+}

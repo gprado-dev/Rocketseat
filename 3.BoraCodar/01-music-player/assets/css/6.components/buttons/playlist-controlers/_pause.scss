@@ -1,0 +1,24 @@
+.playlistControlers-pause {
+  cursor: pointer;
+  
+  width: 6.4rem;
+  height: 6.4rem;
+
+  background-color: transparent;
+  border: none;
+  background-image: url(../img/icon-controls-pause-64.svg);
+
+  transition: $transition-buttons;
+
+  &:hover {
+    filter: $glow-button-slow;
+  }
+}
+
+body:not(.on-play) .playlistControlers-pause {
+  display: none;
+}
+
+body.on-play .playlistControlers-pause {
+  display: block;
+}
