@@ -42,6 +42,33 @@
 
       <section class="playlistBody">
         
+        <div class="searchControlers-container">
+          <div class="input-wrapper" id="input-wrapper">
+            <label class="sr-only" for="search">Pesquisar</label>
+            
+            <a class="icon-search" id="m-icon-search" href="#m-search"></a>
+            <input class="input-search" type="search" name="search" id="m-search">
+          </div>
+
+          <div class="filter-wrapper">
+            <button class ="playlistControlers-filter mobile">Classificar</button>
+            
+            <div class="modal-overlay mobile invisible"></div>
+            
+            <div class="filter-nav mobile">
+              <p class="filter-nav-title">Classificar por</p>
+              
+              <div class="filter-nav-options">
+                <ul class="filter-nav-select" name="filter-nav-select" id="filter-nav-select">
+                  <li class="filter-nav-option mobile active" value="custom-order">Ordem personalizada</option>
+                  <li class="filter-nav-option mobile" value="title">Título</option>
+                  <li class="filter-nav-option mobile" value="artist">Artista</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="playlistCover-container">
           <div class="playlistCover"></div>
         </div>
@@ -75,8 +102,8 @@
               <div class="input-wrapper" id="input-wrapper">
                 <label class="sr-only" for="search">Pesquisar</label>
                 
-                <a class="button-search" id="button-search" href="#search"><span class="sr-only">
-                  Pesquisar na Playlist</span>
+                <a class="button-search" id="button-search" href="#search">
+                  <span class="sr-only">Pesquisar na Playlist</span>
                 </a>
                 
                 <a class="icon-search invisible" id="icon-search" href="#search"></a>
@@ -84,16 +111,17 @@
               </div>
               
               <div class="filter-wrapper">
-                <button class ="playlistControlers-filter">Título</button>
-                <div class="modal-overlay invisible">
+                <button class ="playlistControlers-filter desktop">Ordem personalizada</button>
+                <div class="modal-overlay desktop invisible">
                 </div>
-                <div class="filter-nav">
+                <div class="filter-nav desktop">
                   <p class="filter-nav-title">Classificar por</p>
                   
                   <div class="filter-nav-options">
                     <ul class="filter-nav-select" name="filter-nav-select" id="filter-nav-select">
-                      <li class="filter-nav-option active" value="title">Título</option>
-                      <li class="filter-nav-option" value="artist">Artista</li>
+                      <li class="filter-nav-option desktop active" value="custom-order">Ordem personalizada</option>
+                      <li class="filter-nav-option desktop" value="title">Título</option>
+                      <li class="filter-nav-option desktop" value="artist">Artista</li>
                     </ul>
                   </div>
                 </div>

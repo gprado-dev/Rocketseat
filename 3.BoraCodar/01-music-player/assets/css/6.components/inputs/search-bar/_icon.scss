@@ -1,16 +1,23 @@
-.icon-search {
-  position: absolute;
-  top: calc((100% - $icon-size-md) / 2);
-  left: 1.2rem;
-  width: $icon-size-md;
-  height: $icon-size-md;
-  background-image: url(../img/icon-inputs-search-focus-24.svg);
-  display: block;
-
-  transition: $transition-inputs-search;
+@include responsiveness(global) {
+  .icon-search {
+    position: absolute;
+    top: calc((100% - $icon-size-md) / 2);
+    left: 1.2rem;
+    width: $icon-size-md;
+    height: $icon-size-md;
+    background-image: url(../img/icon-inputs-search-focus-24.svg);
+    display: block;
+  
+    transition: $transition-inputs-search;
+  }
 }
 
-.invisible {
-  display: none;
-  left: .7rem;
+@include responsiveness(device-phone-only) {
+
+}
+
+@include responsiveness(device-tablet-portrait) { 
+  .icon-search.invisible {
+    left: .7rem;
+  }
 }

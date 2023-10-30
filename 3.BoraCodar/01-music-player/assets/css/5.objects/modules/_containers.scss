@@ -37,13 +37,6 @@
   gap: .8rem;
 }
 
-// inputs
-.input-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
 @include responsiveness(device-phone-only) {
   .playlistHeader {
     height: 7.2rem;

@@ -135,12 +135,6 @@ html {
   gap: 0.8rem;
 }
 
-.input-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
 @media only screen and (max-width: 599px) {
   .playlistHeader {
     height: 7.2rem;
@@ -228,11 +222,11 @@ html {
   white-space: normal;
 }
 
-.visibility-on {
+.visible {
   display: block;
 }
 
-.visibility-off {
+.invisible {
   display: none;
 }
 
@@ -272,11 +266,10 @@ html {
 }
 .playlistControlers-filter {
   cursor: pointer;
-  height: 4rem;
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
-  background-color: transparent;
-  border: none;
   color: #7D7986;
   font-family: "SF Pro Text Semibold";
   font-size: 1.3rem;
@@ -284,39 +277,59 @@ html {
   font-weight: normal;
   line-height: 1.8rem; /* 138.462% */
   letter-spacing: -0.078px;
+  white-space: nowrap;
   transition: all 400ms;
+}
+
+@media only screen and (max-width: 599px) {
+  .playlistControlers-filter {
+    height: 4.8rem;
+    padding: 1.2rem;
+    border-radius: 0.8rem;
+    border: none;
+    background: #201934;
+    color: #F2F2F3;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .playlistControlers-filter {
+    background-color: transparent;
+    border: none;
+    height: 4rem;
+  }
+  .playlistControlers-filter::after {
+    display: inline-block;
+    content: "";
+    width: 2rem;
+    height: 1.6rem;
+    padding-right: 0.4rem;
+    background-image: url(../img/icons/CaretDown-normal-16.svg);
+    background-repeat: no-repeat;
+    background-position: center right;
+    transition: background-image 400ms;
+  }
+  .playlistControlers-filter:hover {
+    color: #F2F2F3;
+  }
+  .playlistControlers-filter:hover::after, .playlistControlers-filter.active:hover::after {
+    display: inline-block;
+    content: "";
+    width: 2rem;
+    height: 1.6rem;
+    padding-right: 0.4rem;
+    background-image: url(../img/icons/CaretDown-hover-16.svg);
+    background-repeat: no-repeat;
+    background-position: center right;
+  }
+  .playlistControlers-filter.active::after {
+    transform: scaleY(-1);
+    background-image: url(../img/icons/CaretDown-normal-16.svg);
+    background-repeat: no-repeat;
+    background-position: center right;
+  }
+}
+.filter-wrapper {
   position: relative;
-  z-index: 2;
-}
-.playlistControlers-filter::after {
-  display: inline-block;
-  content: "";
-  width: 2rem;
-  height: 1.6rem;
-  padding-right: 0.4rem;
-  background-image: url(../img/icons/CaretDown-normal-16.svg);
-  background-repeat: no-repeat;
-  background-position: center right;
-  transition: background-image 400ms;
-}
-.playlistControlers-filter:hover {
-  color: #F2F2F3;
-}
-.playlistControlers-filter:hover::after, .playlistControlers-filter.active:hover::after {
-  display: inline-block;
-  content: "";
-  width: 2rem;
-  height: 1.6rem;
-  padding-right: 0.4rem;
-  background-image: url(../img/icons/CaretDown-hover-16.svg);
-  background-repeat: no-repeat;
-  background-position: center right;
-}
-.playlistControlers-filter.active::after {
-  transform: scaleY(-1);
-  background-image: url(../img/icons/CaretDown-normal-16.svg);
-  background-repeat: no-repeat;
-  background-position: center right;
 }
 
 .modal-overlay {
@@ -327,14 +340,6 @@ html {
   left: 0;
 }
 
-.modal-overlay.invisible {
-  display: none;
-}
-
-.filter-wrapper {
-  position: relative;
-}
-
 .filter-nav {
   position: absolute;
   top: -12.5rem;
@@ -342,19 +347,17 @@ html {
   opacity: 0;
   visibility: hidden;
   z-index: 2;
-  background-color: #201934;
-  border: 1px solid #30254D;
-  border-radius: 0.8rem;
-  padding: 1.2rem;
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+  padding: 1.2rem;
+  background-color: #201934;
+  border: 1px solid #30254D;
+  border-radius: 0.8rem;
   box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.4);
   transition: all 400ms;
 }
-
 .filter-nav.open {
-  top: 4.8rem;
   opacity: 1;
   visibility: visible;
 }
@@ -369,12 +372,9 @@ html {
   letter-spacing: -0.078px;
 }
 
-.filter-nav-options {
-  list-style: none;
-}
-
 .filter-nav-option {
   cursor: pointer;
+  list-style: none;
   position: relative;
   font-family: "SF Pro Text Semibold";
   font-size: 1.6rem;
@@ -382,7 +382,7 @@ html {
   font-weight: normal;
   line-height: 2.1rem; /* 131.25% */
   letter-spacing: -0.32px;
-  width: 18.4rem;
+  width: 20.8rem;
   height: 4rem;
   padding: 0.8rem;
   border-radius: 0.4rem;
@@ -396,6 +396,7 @@ html {
 }
 .filter-nav-option.active {
   color: #F2F2F3;
+  background: #30254D;
 }
 .filter-nav-option.active::after {
   display: inline-block;
@@ -409,6 +410,16 @@ html {
   background-position: center;
 }
 
+@media only screen and (max-width: 599px) {
+  .filter-nav.open {
+    top: 5.6rem;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .filter-nav.open {
+    top: 4.8rem;
+  }
+}
 .playlistControlers-pause {
   cursor: pointer;
   width: 6.4rem;
@@ -568,26 +579,33 @@ input:required:invalid:not(:placeholder-shown) {
   border-radius: 0.8rem;
   outline: transparent;
   height: 4rem;
-  width: 0;
-  padding: 0;
-  outline: none;
-  border: none;
   caret-color: #FFCC00;
   transition: all 100ms, width 600ms;
 }
-.input-search:focus {
-  width: 22.4rem;
-  padding-left: 4.4rem;
-  transition: all 100ms, width 600ms;
-}
-.input-search:hover {
-  outline: 0.2rem solid #30254D;
-}
-.input-search:focus {
-  outline: 0.2rem solid #FFCC00;
-  width: 22.4rem;
-}
 
+@media only screen and (max-width: 599px) {
+  .input-search {
+    width: 100%;
+    height: 4.8rem;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .input-search {
+    width: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+  }
+  .input-search:focus {
+    width: 22.4rem;
+    padding-left: 4.4rem;
+    outline: 0.2rem solid #FFCC00;
+    transition: all 100ms, width 600ms;
+  }
+  .input-search:hover {
+    outline: 0.2rem solid #30254D;
+  }
+}
 input[type=search]::-webkit-search-cancel-button {
   -webkit-appearance: none;
           appearance: none;
@@ -608,6 +626,35 @@ input[type=search]::-webkit-search-cancel-button:hover {
   border-radius: 50%;
 }
 
+.searchControlers-container {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 599px) {
+  .searchControlers-container {
+    width: 100%;
+    margin: 0.8rem 0 1.6rem 0;
+  }
+  .input-wrapper {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .searchControlers-container {
+    display: none;
+  }
+  .input-wrapper {
+    width: 100%;
+  }
+}
 .icon-search {
   position: absolute;
   top: calc((100% - 2.4rem) / 2);
@@ -619,15 +666,14 @@ input[type=search]::-webkit-search-cancel-button:hover {
   transition: width 600ms;
 }
 
-.invisible {
-  display: none;
-  left: 0.7rem;
+@media only screen and (min-width: 600px) {
+  .icon-search.invisible {
+    left: 0.7rem;
+  }
 }
-
 input[type=search]::-moz-placeholder {
   color: #7D7986;
 }
-
 input[type=search]::placeholder {
   color: #7D7986;
 }

@@ -1,15 +1,13 @@
-.modal-overlay {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
+@include responsiveness(global) {
+  .filter-wrapper {
+    position: relative;
+  }
 
-.modal-overlay.invisible {
-  display: none;
-}
-
-.filter-wrapper {
-  position: relative;
+  .modal-overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
 }

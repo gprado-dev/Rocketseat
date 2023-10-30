@@ -1,57 +1,75 @@
-.playlistControlers-filter {
-  cursor: pointer;
-
-  height: 4rem;
-
-  display: flex;
-  align-items: center;
-
-  background-color: transparent;
-  border: none;
-  color: $color-gray-300;
-  @include bold-footnote;
-
-  transition: $transition-buttons;
-
-  position: relative;
-  z-index: 2;
-
-  &::after {
-    display: inline-block;
-    content: '';
+@include responsiveness(global) {
+  .playlistControlers-filter {
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    
+    display: flex;
+    align-items: center;
   
-    width: 2rem;
-    height: 1.6rem;
-    padding-right: .4rem;
+    color: $color-gray-300;
+    @include bold-footnote;
+    white-space: nowrap;
   
-    background-image: url(../img/icons/CaretDown-normal-16.svg);
-    background-repeat: no-repeat;
-    background-position: center right;
-    transition: background-image 400ms;
+    transition: $transition-buttons;
   }
+}
 
-  &:hover {
+@include responsiveness(device-phone-only) {
+  .playlistControlers-filter {
+    height: 4.8rem;
+    padding: 1.2rem;
+    border-radius: $radius-md;
+
+    border: none;
+    background: $color-primary-base;
     color: $color-gray-100;
   }
+}
 
-  &:hover::after, &.active:hover::after {
-    display: inline-block;
-    content: '';
+@include responsiveness(device-tablet-portrait) {
+  .playlistControlers-filter {
+  background-color: transparent;
+  border: none;
+  height: 4rem;
+
+    &::after {
+      display: inline-block;
+      content: '';
+    
+      width: 2rem;
+      height: 1.6rem;
+      padding-right: .4rem;
+    
+      background-image: url(../img/icons/CaretDown-normal-16.svg);
+      background-repeat: no-repeat;
+      background-position: center right;
+      transition: background-image 400ms;
+    }
+
+    &:hover {
+      color: $color-gray-100;
+    }
+
+    &:hover::after, &.active:hover::after {
+      display: inline-block;
+      content: '';
+    
+      width: 2rem;
+      height: 1.6rem;
+      padding-right: .4rem;
+    
+      background-image: url(../img/icons/CaretDown-hover-16.svg);
+      background-repeat: no-repeat;
+      background-position: center right;
+    }
+
+    &.active::after  {
+      transform: scaleY(-1);
   
-    width: 2rem;
-    height: 1.6rem;
-    padding-right: .4rem;
-  
-    background-image: url(../img/icons/CaretDown-hover-16.svg);
-    background-repeat: no-repeat;
-    background-position: center right;
-  }
-
-  &.active::after  {
-    transform: scaleY(-1);
-
-    background-image: url(../img/icons/CaretDown-normal-16.svg);
-    background-repeat: no-repeat;
-    background-position: center right;
+      background-image: url(../img/icons/CaretDown-normal-16.svg);
+      background-repeat: no-repeat;
+      background-position: center right;
+    }
   }
 }

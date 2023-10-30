@@ -1,78 +1,92 @@
-.filter-nav {
-  position: absolute;
-  top: -12.5rem;
-  right: 0;
-  opacity: 0;
-  visibility: hidden;
-  z-index: 2;
-
-  background-color: $color-primary-base;
-  border: 1px solid $color-primary-light;
-  border-radius: $radius-md;
-  
-  padding: 1.2rem;
-
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-
-  box-shadow: $shadow-bottom;
-
-  transition: $transition-buttons;
-}
-
-.filter-nav.open {
-  top: calc(4rem + .8rem);
-  opacity: 1;
-  visibility: visible;
-}
-
-.filter-nav-title {
-  color: $color-gray-200;
-  @include bold-footnote;
-}
-
-.filter-nav-options {
-  list-style: none;
-}
-
-.filter-nav-option {
-  cursor: pointer;
-  position: relative;
-
-  @include bold-callout;
-
-  width: 18.4rem;
-  height: 4rem;
-  padding: .8rem;
-  border-radius: $radius-sm;
-
-  display: flex;
-  align-items: center;
-
-  transition: $transition-nav;
-
-  &:hover {
-    color: $color-gray-100;
-    background-color: $color-primary-light;
-  }
-
-  &.active {
-    color: $color-gray-100;
-  }
-
-  &.active::after {
-    display: inline-block;
-    content: '';
-
+@include responsiveness(global) {
+  .filter-nav {
     position: absolute;
-    right: .8rem;
+    top: -12.5rem;
+    right: 0;
+    
+    opacity: 0;
+    visibility: hidden;
+    z-index: 2;
 
-    width: 1.6rem;
-    height: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding: 1.2rem;
+  
+    background-color: $color-primary-base;
+    border: 1px solid $color-primary-light;
+    border-radius: $radius-md;
 
-    background-image: url(../img/icons/check-active-16.svg);
-    background-repeat: no-repeat;
-    background-position: center;
+    box-shadow: $shadow-bottom;
+    transition: $transition-buttons;
+
+    &.open {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .filter-nav-title {
+    color: $color-gray-200;
+    @include bold-footnote;
+  }
+  
+  .filter-nav-option {
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+  
+    @include bold-callout;
+  
+    width: 20.8rem;
+    height: 4rem;
+    padding: .8rem;
+    border-radius: $radius-sm;
+  
+    display: flex;
+    align-items: center;
+  
+    transition: $transition-nav;
+  
+    &:hover {
+      color: $color-gray-100;
+      background-color: $color-primary-light;
+    }
+  
+    &.active {
+      color: $color-gray-100;
+      background: $color-primary-light;
+    }
+  
+    &.active::after {
+      display: inline-block;
+      content: '';
+  
+      position: absolute;
+      right: .8rem;
+  
+      width: 1.6rem;
+      height: 1.6rem;
+  
+      background-image: url(../img/icons/check-active-16.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
+
+@include responsiveness(device-phone-only) {
+  .filter-nav {
+    &.open {
+      top: calc(4rem + 1.6rem);
+    }
+  }
+}
+
+@include responsiveness(device-tablet-portrait) {
+  .filter-nav {
+    &.open {
+      top: calc(4rem + .8rem);
+    }
   }
 }
