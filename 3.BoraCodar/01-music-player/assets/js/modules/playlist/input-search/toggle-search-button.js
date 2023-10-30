@@ -3,7 +3,7 @@ import * as Element from './elements.js'
 
 export function toggleSearchButtonOnClick() {
   Element.toggleSearchButton.addEventListener("click", () => {
-    
+
     Element.toggleSearchButton.classList.toggle('invisible');
     Element.iconSearch.classList.toggle('invisible')
   })
