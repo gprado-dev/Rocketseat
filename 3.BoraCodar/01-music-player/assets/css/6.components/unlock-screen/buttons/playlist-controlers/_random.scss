@@ -13,12 +13,12 @@
 
     background-color: transparent;
     border: none;
-    background-image: url(../img/icons/icon-controls-random-normal-32.svg);
+    background-image: url('../img/icons/icon-controls-random-normal-32.svg');
 
     transition: $transition-buttons;
     
     &.on {
-      background-image: url(../img/icons/icon-controls-random-active-32.svg);
+      background-image: url('../img/icons/icon-controls-random-active-32.svg');
 
       transition: $transition-buttons;
     }

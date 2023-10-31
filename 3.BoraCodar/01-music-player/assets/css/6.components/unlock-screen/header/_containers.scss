@@ -1,0 +1,26 @@
+@include responsiveness(global) {
+  .playlistHeader {
+    background-color: $color-primary-dark;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+  }
+}
+
+@include responsiveness(device-phone-only) {
+  .playlistHeader {
+    height: 7.2rem;
+    width: 100%;
+  }  
+}
+
+@include responsiveness(device-tablet-portrait) {
+  .playlistHeader {
+    height: 9.6rem;
+    max-width: $grid-max-width;
+    margin-inline: auto;
+  }
+}

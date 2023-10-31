@@ -103,14 +103,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.playlistHeader {
-  background-color: #161122;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
 .playlistInfo-text-container {
   display: flex;
   flex-direction: column;
@@ -136,14 +128,6 @@ html {
 }
 
 @media only screen and (max-width: 599px) {
-  .playlistHeader {
-    height: 7.2rem;
-    width: 100%;
-  }
-  .playlistBody {
-    padding-inline: 1.6rem;
-    flex-direction: column;
-  }
   .playlistInfo-container {
     display: flex;
     gap: 1.6rem;
@@ -156,15 +140,6 @@ html {
   }
 }
 @media only screen and (min-width: 600px) {
-  .playlistHeader {
-    height: 9.6rem;
-    max-width: 121.6rem;
-    margin-inline: auto;
-  }
-  .main-container {
-    margin-inline: auto;
-    width: 100%;
-  }
   .playlistCover-container {
     position: absolute;
     z-index: -1;
@@ -180,6 +155,9 @@ html {
     max-width: 128rem;
     margin-inline: auto;
     padding-inline: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
   }
   .playlistInfo-container {
     display: flex;
@@ -189,9 +167,6 @@ html {
   }
   .playlistInfo-img-container {
     width: 17.6rem;
-  }
-  .playlistControlers-container {
-    margin-top: 1.6rem;
   }
   .playlistControlers-containerRight {
     display: flex;
@@ -230,6 +205,18 @@ html {
   display: none;
 }
 
+@media only screen and (max-width: 599px) {
+  .playlistBody {
+    padding-inline: 1.6rem;
+    flex-direction: column;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .main-container {
+    margin-inline: auto;
+    width: 100%;
+  }
+}
 .playlistControlers-filter {
   cursor: pointer;
   position: relative;
@@ -436,15 +423,15 @@ html {
   height: 6.4rem;
   background-color: transparent;
   border: none;
-  background-image: url(../img/icons/controls-pause-normal-64.svg);
+  background-image: url("../img/icons/controls-pause-normal-64.svg");
   transition: all 400ms;
 }
 .playlistControlers-pause:hover {
-  background-image: url(../img/icons/controls-pause-hover-64.svg);
+  background-image: url("../img/icons/controls-pause-hover-64.svg");
   filter: drop-shadow(4px 4px 32px rgba(255, 214, 10, 0.4)) drop-shadow(0px 0px 10px rgba(255, 214, 10, 0.4));
 }
 .playlistControlers-pause:active {
-  background-image: url(../img/icons/controls-pause-active-64.svg);
+  background-image: url("../img/icons/controls-pause-active-64.svg");
 }
 
 body:not(.on-play) .playlistControlers-pause {
@@ -460,17 +447,17 @@ body.on-play .playlistControlers-pause {
   height: 6.4rem;
   background-color: transparent;
   border: none;
-  background-image: url(../img/icons/controls-play-normal-64.svg);
+  background-image: url("../img/icons/controls-play-normal-64.svg");
   background-position: center;
   background-size: cover;
   transition: all 400ms;
 }
 .playlistControlers-play:hover {
-  background-image: url(../img/icons/controls-play-hover-64.svg);
+  background-image: url("../img/icons/controls-play-hover-64.svg");
   filter: drop-shadow(4px 4px 32px rgba(255, 214, 10, 0.4)) drop-shadow(0px 0px 10px rgba(255, 214, 10, 0.4));
 }
 .playlistControlers-play:active {
-  background-image: url(../img/icons/controls-play-active-64.svg);
+  background-image: url("../img/icons/controls-play-active-64.svg");
 }
 
 body:not(.on-play) .playlistControlers-play {
@@ -492,12 +479,33 @@ body.on-play .playlistControlers-play {
     height: 3.2rem;
     background-color: transparent;
     border: none;
-    background-image: url(../img/icons/icon-controls-random-normal-32.svg);
+    background-image: url("../img/icons/icon-controls-random-normal-32.svg");
     transition: all 400ms;
   }
   .playlistControlers-random.on {
-    background-image: url(../img/icons/icon-controls-random-active-32.svg);
+    background-image: url("../img/icons/icon-controls-random-active-32.svg");
     transition: all 400ms;
+  }
+}
+.playlistHeader {
+  background-color: #161122;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+@media only screen and (max-width: 599px) {
+  .playlistHeader {
+    height: 7.2rem;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .playlistHeader {
+    height: 9.6rem;
+    max-width: 121.6rem;
+    margin-inline: auto;
   }
 }
 .logo {
@@ -551,9 +559,6 @@ body.on-play .playlistControlers-play {
     -o-object-fit: cover;
        object-fit: cover;
   }
-  .playlistCover {
-    display: none;
-  }
 }
 @media only screen and (min-width: 600px) {
   .cover {
@@ -564,6 +569,13 @@ body.on-play .playlistControlers-play {
        object-fit: cover;
     box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.25);
   }
+}
+@media only screen and (max-width: 599px) {
+  .playlistCover {
+    display: none;
+  }
+}
+@media only screen and (min-width: 600px) {
   .playlistCover {
     width: 100%;
     height: 24rem;
@@ -676,7 +688,7 @@ input[type=search]::-webkit-search-cancel-button {
   width: 2.4rem;
   height: 2.4rem;
   border-radius: 50%;
-  background-image: url(../img/icon-inputs-search-cancel-16.svg);
+  background-image: url("../img/icons/inputs-search-cancel-16.svg");
   background-position: center;
   background-repeat: no-repeat;
   -webkit-transition: all 400ms;
@@ -723,7 +735,7 @@ input[type=search]::-webkit-search-cancel-button:hover {
   left: 1.2rem;
   width: 2.4rem;
   height: 2.4rem;
-  background-image: url(../img/icons/inputs-search-normal-24.svg);
+  background-image: url("../img/icons/inputs-search-normal-24.svg");
   display: block;
   transition: width 600ms;
 }
@@ -746,7 +758,7 @@ input[type=search]::placeholder {
   height: 4rem;
   border: none;
   border-radius: 50%;
-  background-image: url("../img/icon-inputs-search-normal-24.svg");
+  background-image: url("../img/icons/inputs-search-normal-24.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-color: transparent;
@@ -755,7 +767,7 @@ input[type=search]::placeholder {
 }
 .button-search:hover {
   background-color: #30254D;
-  background-image: url("../img/icon-inputs-search-focus-24.svg");
+  background-image: url("../img/icons/inputs-search-focus-24.svg");
 }
 .button-search:active {
   background-color: #403267;

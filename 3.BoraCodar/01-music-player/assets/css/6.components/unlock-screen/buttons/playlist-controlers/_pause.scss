@@ -6,17 +6,17 @@
 
   background-color: transparent;
   border: none;
-  background-image: url(../img/icons/controls-pause-normal-64.svg);
+  background-image: url('../img/icons/controls-pause-normal-64.svg');
 
   transition: $transition-buttons;
 
   &:hover {
-    background-image: url(../img/icons/controls-pause-hover-64.svg);
+    background-image: url('../img/icons/controls-pause-hover-64.svg');
     filter: $glow-button-slow;
   }
 
   &:active {
-    background-image: url(../img/icons/controls-pause-active-64.svg);
+    background-image: url('../img/icons/controls-pause-active-64.svg');
   }
 }
 body {

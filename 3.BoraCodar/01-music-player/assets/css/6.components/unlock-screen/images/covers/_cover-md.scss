@@ -1,5 +1,4 @@
 @include responsiveness(device-phone-only) {
-  // main cover
   .cover {
     width: 100%;
     max-width: 70rem;
@@ -7,15 +6,13 @@
     border-radius: $radius-md;
     object-fit: cover;
   }
-
-  // wide cover
-  .playlistCover {
-    display: none;
-  }
 }
 
 @include responsiveness(device-tablet-portrait) {
-  // main cover
+  .playlistInfo-img-container {
+    width: 17.6rem;
+  }
+
   .cover {
     width: 17.6rem;
     height: 17.6rem;
@@ -23,13 +20,5 @@
     object-fit: cover;
   
     box-shadow: $shadow-cover;
-  }
-
-  // wide cover
-  .playlistCover {
-    width: 100%;
-    height: 24rem;
-    object-fit: cover;
-    background: linear-gradient(180deg, $color-primary-lightest 0%, rgba(0, 0, 0, 0.6) 100%), $color-primary-lightest;
   }
 }

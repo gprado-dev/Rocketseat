@@ -1,0 +1,48 @@
+@include responsiveness(global) {
+  .playlistControlers-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .playlistControlers-containerLeft {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+  }
+}
+
+@include responsiveness(device-phone-only) {
+  .playlistBody {
+    padding-inline: 1.6rem;
+    flex-direction: column;
+  }
+
+  .playlistControlers-containerRight {
+    display: none;
+  }
+}
+
+@include responsiveness(device-tablet-portrait) {
+  .main-container {
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .playlistContent {
+    width: 100%;
+    max-width: calc($grid-max-width + 6.4rem);
+    margin-inline: auto;
+    padding-inline: 3.2rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  .playlistControlers-containerRight {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+  }
+}

@@ -1,0 +1,32 @@
+@include responsiveness(global) {
+  .playlistInfo-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+  }
+
+  .playlistData-container {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+  }
+}
+
+@include responsiveness(device-phone-only) {
+  .playlistInfo-container {
+    display: flex;
+    gap: 1.6rem;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 1.6rem;
+  }
+}
+
+@include responsiveness(device-tablet-portrait) {
+  .playlistInfo-container {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    padding-top: 8rem;
+  }
+}
