@@ -19,5 +19,6 @@
 @include responsiveness(device-tablet-portrait) { 
   .icon-search.invisible {
     left: .7rem;
+    display: none;
   }
 }
