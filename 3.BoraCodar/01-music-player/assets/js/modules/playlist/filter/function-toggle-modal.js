@@ -1,19 +1,26 @@
 import * as Element from './elements.js'
+import * as WindowSize from '../../global/window-size.js'
 
-export function toggleModal() {
-  Element.filterButton()[0].addEventListener("click", () => {
-    Element.filterButton()[0].classList.toggle('active')
-    Element.filterModal()[0].classList.toggle('open')
+function toggleModal() {
+  Element.filterButton.addEventListener("click", () => {
+    Element.filterButton.classList.toggle('active')
+    Element.filterModal.classList.add('open')
 
-    Element.modalOverlay()[0].classList.remove('invisible')
+    Element.modalOverlay.classList.remove('invisible')
   });
 
-  Element.modalOverlay()[0].addEventListener("click", () => {
-    Element.filterButton()[0].classList.remove('active')
-    Element.filterModal()[0].classList.remove('open')
+  Element.modalOverlay.addEventListener("click", () => {
+    Element.filterButton.classList.remove('active')
+    Element.filterModal.classList.remove('open')
 
-    Element.modalOverlay()[0].classList.add('invisible')
+    Element.modalOverlay.classList.add('invisible')
   });
 }
+
+addEventListener("resize", () => {
+  WindowSize.reportWindowSize()
+  
+  toggleModal()
+})
 
 toggleModal()

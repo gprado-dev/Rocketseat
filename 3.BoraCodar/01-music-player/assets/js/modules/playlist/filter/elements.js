@@ -1,71 +1,36 @@
-export let filterButton = function() {
-// for mobile
-  if (window.matchMedia('(max-width: 599px)').matches) {
-    return document.getElementsByClassName('playlistControlers-filter mobile')
+import * as WindowSize from '../../global/window-size.js'
+
+export let filterButton, modalOverlay, filterModal, filterOptionCustomOrder, filterOptionTitle, filterOptionArtist
+
+
+function htmlPicker() {
+  // for mobile
+  if (WindowSize.reportWindowSize() < 600) {
+    filterButton = document.getElementsByClassName('playlistControlers-filter mobile')[0]
+    modalOverlay = document.getElementsByClassName('modal-overlay mobile')[0]
+    filterModal = document.getElementsByClassName('filter-nav mobile')[0]
+    
+    filterOptionCustomOrder = document.querySelector('.filter-nav-option.mobile[value="custom-order"]')
+    filterOptionTitle = document.querySelector('.filter-nav-option.mobile[value="title"]')
+    filterOptionArtist = document.querySelector('.filter-nav-option.mobile[value="artist"]')
   }
 
-// for desktop
-  if (window.matchMedia('(min-width: 600px)').matches) {
-    return document.getElementsByClassName('playlistControlers-filter desktop')
+  // for desktop
+  else {
+    filterButton = document.getElementsByClassName('playlistControlers-filter desktop')[0]
+    modalOverlay = document.getElementsByClassName('modal-overlay desktop')[0]
+    filterModal = document.getElementsByClassName('filter-nav desktop')[0]
+    
+    filterOptionCustomOrder = document.querySelector('.filter-nav-option.desktop[value="custom-order"]')
+    filterOptionTitle = document.querySelector('.filter-nav-option.desktop[value="title"]')
+    filterOptionArtist = document.querySelector('.filter-nav-option.desktop[value="artist"]')
   }
 }
+htmlPicker()
 
-export let modalOverlay = function() {
-  // for mobile
-    if (window.matchMedia('(max-width: 599px)').matches) {
-      return document.getElementsByClassName('modal-overlay mobile')
-    }
-  
-  // for desktop
-    if (window.matchMedia('(min-width: 600px)').matches) {
-      return document.getElementsByClassName('modal-overlay desktop')
-    }
-}
 
-export let filterModal = function() {
-  // for mobile
-    if (window.matchMedia('(max-width: 599px)').matches) {
-      return document.getElementsByClassName('filter-nav mobile')
-    }
+addEventListener("resize", () => {
+  WindowSize.reportWindowSize()
   
-  // for desktop
-    if (window.matchMedia('(min-width: 600px)').matches) {
-      return document.getElementsByClassName('filter-nav desktop')
-    }
-}
-
-export let filterOptionCustomOrder = function() {
-  // for mobile
-    if (window.matchMedia('(max-width: 599px)').matches) {
-      return document.querySelector('.filter-nav-option.mobile[value="custom-order"]')
-    }
-  
-  // for desktop
-    if (window.matchMedia('(min-width: 600px)').matches) {
-      return document.querySelector('.filter-nav-option.desktop[value="custom-order"]')
-    }
-}
-
-export let filterOptionTitle = function() {
-  // for mobile
-    if (window.matchMedia('(max-width: 599px)').matches) {
-      return document.querySelector('.filter-nav-option.mobile[value="title"]')
-    }
-  
-  // for desktop
-    if (window.matchMedia('(min-width: 600px)').matches) {
-      return document.querySelector('.filter-nav-option.desktop[value="title"]')
-    }
-}
-
-export let filterOptionArtist = function() {
-  // for mobile
-    if (window.matchMedia('(max-width: 599px)').matches) {
-      return document.querySelector('.filter-nav-option.mobile[value="artist"]')
-    }
-  
-  // for desktop
-    if (window.matchMedia('(min-width: 600px)').matches) {
-      return document.querySelector('.filter-nav-option.desktop[value="artist"]')
-    }
-}
+  htmlPicker()
+})
