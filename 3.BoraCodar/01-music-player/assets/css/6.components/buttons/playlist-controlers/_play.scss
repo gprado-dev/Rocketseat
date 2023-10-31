@@ -6,21 +6,28 @@
 
   background-color: transparent;
   border: none;
-  background-image: url(../img/icon-controls-play-64.svg);
+  background-image: url(../img/icons/controls-play-normal-64.svg);
   background-position: center;
   background-size: cover;
 
   transition: $transition-buttons;
 
   &:hover {
+    background-image: url(../img/icons/controls-play-hover-64.svg);
     filter: $glow-button-slow;
+  }
+
+  &:active {
+    background-image: url(../img/icons/controls-play-active-64.svg);
   }
 }
 
-body:not(.on-play) .playlistControlers-play {
-  display: block;
-}
+body {
+  &:not(.on-play) .playlistControlers-play {
+    display: block;
+  }
 
-body.on-play .playlistControlers-play {
-  display: none;
+  &.on-play .playlistControlers-play {
+    display: none;
+  }
 }

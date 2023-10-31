@@ -5,15 +5,11 @@
     left: 1.2rem;
     width: $icon-size-md;
     height: $icon-size-md;
-    background-image: url(../img/icon-inputs-search-focus-24.svg);
+    background-image: url(../img/icons/inputs-search-normal-24.svg);
     display: block;
   
     transition: $transition-inputs-search;
   }
-}
-
-@include responsiveness(device-phone-only) {
-
 }
 
 @include responsiveness(device-tablet-portrait) { 

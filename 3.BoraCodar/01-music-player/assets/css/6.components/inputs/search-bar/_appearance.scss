@@ -6,11 +6,15 @@
     padding: 1.2rem .8rem 1.2rem calc(1.2rem + $icon-size-md + .8rem);
     border: none;
     border-radius: $radius-md;
-    outline: 0.2rem solid transparent;
+    outline: .2rem solid transparent;
     height: 4rem;
 
     caret-color: $color-secondary-base;
     transition: $transition-inputs, $transition-inputs-search;
+
+    &:focus {
+      outline: .2rem solid $color-secondary-base;
+    }
   }
 }
 
@@ -36,12 +40,14 @@
       transition: $transition-inputs, $transition-inputs-search;
     }
 
-    &:focus {
-      outline: .2rem solid $color-secondary-base;
-    }
-
-    &:hover:not(:focus) {
+    &:hover {
       outline: .2rem solid $color-primary-light;
     }
+
+    &:focus:hover {
+      outline: .2rem solid $color-secondary-light;
+    }
+
+    
   }
 }

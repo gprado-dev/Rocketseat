@@ -6,19 +6,25 @@
 
   background-color: transparent;
   border: none;
-  background-image: url(../img/icon-controls-pause-64.svg);
+  background-image: url(../img/icons/controls-pause-normal-64.svg);
 
   transition: $transition-buttons;
 
   &:hover {
+    background-image: url(../img/icons/controls-pause-hover-64.svg);
     filter: $glow-button-slow;
   }
-}
 
-body:not(.on-play) .playlistControlers-pause {
-  display: none;
+  &:active {
+    background-image: url(../img/icons/controls-pause-active-64.svg);
+  }
 }
+body {
+  &:not(.on-play) .playlistControlers-pause {
+    display: none;
+  }
 
-body.on-play .playlistControlers-pause {
-  display: block;
+  &.on-play .playlistControlers-pause {
+    display: block;
+  }
 }

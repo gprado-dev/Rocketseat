@@ -9,10 +9,10 @@ input[type="search"]::-webkit-search-cancel-button {
   background-repeat: no-repeat;
 
   transition: $transition-buttons;
-}
 
-input[type="search"]::-webkit-search-cancel-button:hover {
-  cursor: pointer;
-  background-color: $color-primary-light;
-  border-radius: 50%;
+  &:hover {
+    cursor: pointer;
+    background-color: $color-primary-light;
+    border-radius: 50%;
+  }
 }

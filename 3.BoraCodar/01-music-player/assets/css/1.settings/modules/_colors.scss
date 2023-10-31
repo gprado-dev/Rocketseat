@@ -1,10 +1,12 @@
-$color-primary-lightest: #633BBC;
-$color-primary-light: #30254D;
-$color-primary-base: #201934;
-$color-primary-dark: #161122;
+$color-primary-lightest: #403267; // active and selected
+$color-primary-light: #30254D; // hover and borders
+$color-primary-base: #201934; // shapes and inputs
+$color-primary-dark: #161122; // background
 
-$color-secondary-light: #FFDB4D;
-$color-secondary-base: #FFCC00;
+$color-secondary-lightest: #FFE066; // active and selected
+$color-secondary-light: #FFDB4D; // hover and borders
+$color-secondary-base: #FFCC00; // shapes
+$color-secondary-dark: #D6AB00;
 
 $color-success-light: #04D361;
 $color-success-base: #1B873F;
@@ -18,6 +20,6 @@ $color-warning-light: #FBA94C;
 $color-warning-base: #EB8A1D;
 $color-warning-dark: #2E1B06;
 
-$color-gray-100: #F2F2F3;
-$color-gray-200: #BEBCC2;
-$color-gray-300: #7D7986;
+$color-gray-100: #F2F2F3; // title
+$color-gray-200: #BEBCC2; // paragraph
+$color-gray-300: #7D7986; // legend and placeholder

@@ -230,40 +230,6 @@ html {
   display: none;
 }
 
-.btnLock {
-  cursor: pointer;
-  width: 4rem;
-  height: 4rem;
-  background-color: transparent;
-  border: none;
-  border-radius: 50%;
-  position: absolute;
-  right: 0;
-  transition: all 400ms;
-}
-
-@media only screen and (max-width: 599px) {
-  .btnLock {
-    background-image: url("../img/icons/icon-lock.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    right: 1.6rem;
-  }
-}
-@media only screen and (min-width: 600px) {
-  .btnLock {
-    background-image: url("../img/icons/icon-unlock.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    right: 3.2rem;
-  }
-  .btnLock:hover {
-    background-color: #30254D;
-    background-image: url("../img/icons/icon-lock.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-}
 .playlistControlers-filter {
   cursor: pointer;
   position: relative;
@@ -308,11 +274,17 @@ html {
     color: #F2F2F3;
     background-color: #30254D;
   }
+  .playlistControlers-filter:active {
+    background-color: #403267;
+  }
   .playlistControlers-filter.active {
     background-color: #201934;
   }
   .playlistControlers-filter.active:hover {
     background-color: #30254D;
+  }
+  .playlistControlers-filter.active:active {
+    background-color: #403267;
   }
   .playlistControlers-filter::after {
     display: inline-block;
@@ -405,6 +377,7 @@ html {
   font-weight: normal;
   line-height: 2.1rem; /* 131.25% */
   letter-spacing: -0.32px;
+  color: #BEBCC2;
   width: 20.8rem;
   height: 4rem;
   padding: 0.8rem;
@@ -417,9 +390,23 @@ html {
   color: #F2F2F3;
   background-color: #30254D;
 }
+.filter-nav-option:active {
+  background: #403267;
+}
+.filter-nav-option:hover::after {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  right: 0.8rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  background-image: url(../img/icons/check-inactive-16.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .filter-nav-option.active {
   color: #F2F2F3;
-  background: #30254D;
+  background: #403267;
 }
 .filter-nav-option.active::after {
   display: inline-block;
@@ -431,9 +418,6 @@ html {
   background-image: url(../img/icons/check-active-16.svg);
   background-repeat: no-repeat;
   background-position: center;
-}
-.filter-nav-option:active {
-  background: #161122;
 }
 
 @media only screen and (max-width: 599px) {
@@ -452,17 +436,20 @@ html {
   height: 6.4rem;
   background-color: transparent;
   border: none;
-  background-image: url(../img/icon-controls-pause-64.svg);
+  background-image: url(../img/icons/controls-pause-normal-64.svg);
   transition: all 400ms;
 }
 .playlistControlers-pause:hover {
+  background-image: url(../img/icons/controls-pause-hover-64.svg);
   filter: drop-shadow(4px 4px 32px rgba(255, 214, 10, 0.4)) drop-shadow(0px 0px 10px rgba(255, 214, 10, 0.4));
+}
+.playlistControlers-pause:active {
+  background-image: url(../img/icons/controls-pause-active-64.svg);
 }
 
 body:not(.on-play) .playlistControlers-pause {
   display: none;
 }
-
 body.on-play .playlistControlers-pause {
   display: block;
 }
@@ -473,19 +460,22 @@ body.on-play .playlistControlers-pause {
   height: 6.4rem;
   background-color: transparent;
   border: none;
-  background-image: url(../img/icon-controls-play-64.svg);
+  background-image: url(../img/icons/controls-play-normal-64.svg);
   background-position: center;
   background-size: cover;
   transition: all 400ms;
 }
 .playlistControlers-play:hover {
+  background-image: url(../img/icons/controls-play-hover-64.svg);
   filter: drop-shadow(4px 4px 32px rgba(255, 214, 10, 0.4)) drop-shadow(0px 0px 10px rgba(255, 214, 10, 0.4));
+}
+.playlistControlers-play:active {
+  background-image: url(../img/icons/controls-play-active-64.svg);
 }
 
 body:not(.on-play) .playlistControlers-play {
   display: block;
 }
-
 body.on-play .playlistControlers-play {
   display: none;
 }
@@ -495,33 +485,63 @@ body.on-play .playlistControlers-play {
     display: none;
   }
 }
-.playlistControlers-random {
-  cursor: pointer;
-  width: 3.2rem;
-  height: 3.2rem;
-  background-color: transparent;
-  border: none;
-  background-image: url(../img/icons/icon-controls-random-normal-32.svg);
-  transition: all 400ms;
+@media only screen and (max-width: 599px) {
+  .playlistControlers-random {
+    cursor: pointer;
+    width: 3.2rem;
+    height: 3.2rem;
+    background-color: transparent;
+    border: none;
+    background-image: url(../img/icons/icon-controls-random-normal-32.svg);
+    transition: all 400ms;
+  }
+  .playlistControlers-random.on {
+    background-image: url(../img/icons/icon-controls-random-active-32.svg);
+    transition: all 400ms;
+  }
 }
-.playlistControlers-random:hover {
-  background-image: url(../img/icons/icon-controls-random-hover-32.svg);
-}
-
-.playlistControlers-random.on {
-  background-image: url(../img/icons/icon-controls-random-active-32.svg);
-  transition: all 400ms;
-}
-.playlistControlers-random.on:hover {
-  background-image: url(../img/icons/icon-controls-random-active-hover-32.svg);
-  filter: drop-shadow(4px 4px 32px rgba(255, 214, 10, 0.4)) drop-shadow(0px 0px 10px rgba(255, 214, 10, 0.4));
-}
-
 .logo {
   width: auto;
   height: clamp(1.6rem, 1% + 2vw, 2.4rem);
 }
 
+.btnLock {
+  cursor: pointer;
+  width: 4rem;
+  height: 4rem;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  transition: all 400ms;
+}
+
+@media only screen and (max-width: 599px) {
+  .btnLock {
+    background-image: url("../img/icons/icon-lock.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    right: 1.6rem;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .btnLock {
+    background-image: url("../img/icons/icon-unlock.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    right: 3.2rem;
+  }
+  .btnLock:hover {
+    background-color: #30254D;
+    background-image: url("../img/icons/icon-lock.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .btnLock:active {
+    background-color: #403267;
+  }
+}
 @media only screen and (max-width: 599px) {
   .cover {
     width: 100%;
@@ -549,30 +569,43 @@ body.on-play .playlistControlers-play {
     height: 24rem;
     -o-object-fit: cover;
        object-fit: cover;
-    background: linear-gradient(180deg, #633BBC 0%, rgba(0, 0, 0, 0.6) 100%), #633BBC;
+    background: linear-gradient(180deg, #403267 0%, rgba(0, 0, 0, 0.6) 100%), #403267;
   }
 }
-input:focus,
-textarea:focus,
-select:focus {
-  outline: 0.1rem solid #FFCC00;
-  border: none;
-  transition: var(--transition-inputs);
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  outline: 0.2rem solid transparent;
+  -webkit-text-fill-color: #F2F2F3;
+  -webkit-box-shadow: 0 0 0px 1000px #201934 inset;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
-input:-webkit-autofill,
 input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active,
-textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
+select:-webkit-autofill:hover {
+  outline: 0.2rem solid #30254D;
+  -webkit-text-fill-color: #F2F2F3;
+  -webkit-box-shadow: 0 0 0px 1000px #201934 inset;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input:-webkit-autofill:focus,
 textarea:-webkit-autofill:focus,
+select:-webkit-autofill:focus {
+  outline: 0.2rem solid #FFCC00;
+  -webkit-text-fill-color: #F2F2F3;
+  -webkit-box-shadow: 0 0 0px 1000px #201934 inset;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input:-webkit-autofill:active,
 textarea:-webkit-autofill:active,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus,
 select:-webkit-autofill:active {
-  outline: 1px solid #FFCC00;
+  outline: 0.2rem solid #403267;
   -webkit-text-fill-color: #F2F2F3;
   -webkit-box-shadow: 0 0 0px 1000px #201934 inset;
   -webkit-transition: background-color 5000s ease-in-out 0s;
@@ -608,6 +641,9 @@ input:required:invalid:not(:placeholder-shown) {
   caret-color: #FFCC00;
   transition: all 100ms, width 600ms;
 }
+.input-search:focus {
+  outline: 0.2rem solid #FFCC00;
+}
 
 @media only screen and (max-width: 599px) {
   .input-search {
@@ -626,11 +662,11 @@ input:required:invalid:not(:placeholder-shown) {
     padding-left: 4.4rem;
     transition: all 100ms, width 600ms;
   }
-  .input-search:focus {
-    outline: 0.2rem solid #FFCC00;
-  }
-  .input-search:hover:not(:focus) {
+  .input-search:hover {
     outline: 0.2rem solid #30254D;
+  }
+  .input-search:focus:hover {
+    outline: 0.2rem solid #FFDB4D;
   }
 }
 input[type=search]::-webkit-search-cancel-button {
@@ -646,7 +682,6 @@ input[type=search]::-webkit-search-cancel-button {
   -webkit-transition: all 400ms;
   transition: all 400ms;
 }
-
 input[type=search]::-webkit-search-cancel-button:hover {
   cursor: pointer;
   background-color: #30254D;
@@ -688,7 +723,7 @@ input[type=search]::-webkit-search-cancel-button:hover {
   left: 1.2rem;
   width: 2.4rem;
   height: 2.4rem;
-  background-image: url(../img/icon-inputs-search-focus-24.svg);
+  background-image: url(../img/icons/inputs-search-normal-24.svg);
   display: block;
   transition: width 600ms;
 }
@@ -718,10 +753,12 @@ input[type=search]::placeholder {
   cursor: pointer;
   transition: all 400ms;
 }
-
 .button-search:hover {
   background-color: #30254D;
   background-image: url("../img/icon-inputs-search-focus-24.svg");
+}
+.button-search:active {
+  background-color: #403267;
 }
 
 .separator-dot-sm {

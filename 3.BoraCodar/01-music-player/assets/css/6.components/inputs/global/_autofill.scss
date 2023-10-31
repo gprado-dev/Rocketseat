@@ -1,25 +1,38 @@
-input:focus,
-textarea:focus,
-select:focus {
-  outline: .1rem solid $color-secondary-base;
-  border: none;
-  transition: var(--transition-inputs);
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill
+{
+  outline: .2rem solid transparent;
+  -webkit-text-fill-color: $color-gray-100;
+  -webkit-box-shadow: 0 0 0px 1000px $color-primary-base inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
-
-input:-webkit-autofill,
 input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active,
-textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
+select:-webkit-autofill:hover 
+{
+  outline: .2rem solid $color-primary-light;
+  -webkit-text-fill-color: $color-gray-100;
+  -webkit-box-shadow: 0 0 0px 1000px $color-primary-base inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input:-webkit-autofill:focus,
 textarea:-webkit-autofill:focus,
+select:-webkit-autofill:focus 
+{
+  outline: .2rem solid $color-secondary-base;
+  -webkit-text-fill-color: $color-gray-100;
+  -webkit-box-shadow: 0 0 0px 1000px $color-primary-base inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input:-webkit-autofill:active,
 textarea:-webkit-autofill:active,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus,
-select:-webkit-autofill:active {
-  outline: 1px solid $color-secondary-base;
+select:-webkit-autofill:active
+{
+  outline: .2rem solid $color-primary-lightest;
   -webkit-text-fill-color: $color-gray-100;
   -webkit-box-shadow: 0 0 0px 1000px $color-primary-base inset;
   transition: background-color 5000s ease-in-out 0s;

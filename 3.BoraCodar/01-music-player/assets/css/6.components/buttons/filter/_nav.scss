@@ -37,6 +37,7 @@
     position: relative;
   
     @include bold-callout;
+    color: $color-gray-200;
   
     width: 20.8rem;
     height: 4rem;
@@ -52,10 +53,29 @@
       color: $color-gray-100;
       background-color: $color-primary-light;
     }
+
+    &:active {
+      background: $color-primary-lightest;
+    }
+
+    &:hover::after {
+      display: inline-block;
+      content: '';
+  
+      position: absolute;
+      right: .8rem;
+  
+      width: 1.6rem;
+      height: 1.6rem;
+  
+      background-image: url(../img/icons/check-inactive-16.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
   
     &.active {
       color: $color-gray-100;
-      background: $color-primary-light;
+      background: $color-primary-lightest;
     }
   
     &.active::after {
@@ -71,10 +91,6 @@
       background-image: url(../img/icons/check-active-16.svg);
       background-repeat: no-repeat;
       background-position: center;
-    }
-
-    &:active {
-      background: $color-primary-dark;
     }
   }
 }

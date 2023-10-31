@@ -11,9 +11,13 @@
   cursor: pointer;
 
   transition: $transition-buttons;
-}
 
-.button-search:hover {
-  background-color: $color-primary-light;
-  background-image: url('../img/icon-inputs-search-focus-24.svg');
+  &:hover {
+    background-color: $color-primary-light;
+    background-image: url('../img/icon-inputs-search-focus-24.svg');
+  }
+
+  &:active {
+    background-color: $color-primary-lightest;
+  }
 }

@@ -46,12 +46,20 @@
       background-color: $color-primary-light;
     }
 
+    &:active {
+      background-color: $color-primary-lightest;
+    }
+
     &.active {
       background-color: $color-primary-base;
     }
 
     &.active:hover {
       background-color: $color-primary-light;
+    }
+
+    &.active:active {
+      background-color: $color-primary-lightest;
     }
 
     &::after {
