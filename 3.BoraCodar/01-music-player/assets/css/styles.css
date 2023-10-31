@@ -295,7 +295,24 @@ html {
   .playlistControlers-filter {
     background-color: transparent;
     border: none;
+    border-radius: 0.8rem;
+    padding: 1.2rem;
     height: 4rem;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    transition: all 400ms;
+  }
+  .playlistControlers-filter:hover {
+    color: #F2F2F3;
+    background-color: #30254D;
+  }
+  .playlistControlers-filter.active {
+    background-color: #201934;
+  }
+  .playlistControlers-filter.active:hover {
+    background-color: #30254D;
   }
   .playlistControlers-filter::after {
     display: inline-block;
@@ -307,9 +324,6 @@ html {
     background-repeat: no-repeat;
     background-position: center right;
     transition: background-image 400ms;
-  }
-  .playlistControlers-filter:hover {
-    color: #F2F2F3;
   }
   .playlistControlers-filter:hover::after, .playlistControlers-filter.active:hover::after {
     display: inline-block;
@@ -326,6 +340,15 @@ html {
     background-image: url(../img/icons/CaretDown-normal-16.svg);
     background-repeat: no-repeat;
     background-position: center right;
+  }
+  .playlistControlers-filter.opt1 {
+    width: 18.242rem;
+  }
+  .playlistControlers-filter.opt2 {
+    width: 8.405rem;
+  }
+  .playlistControlers-filter.opt3 {
+    width: 9.081rem;
   }
 }
 .filter-wrapper {
@@ -408,6 +431,9 @@ html {
   background-image: url(../img/icons/check-active-16.svg);
   background-repeat: no-repeat;
   background-position: center;
+}
+.filter-nav-option:active {
+  background: #161122;
 }
 
 @media only screen and (max-width: 599px) {

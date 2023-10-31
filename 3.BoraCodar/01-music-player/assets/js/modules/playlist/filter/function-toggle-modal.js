@@ -4,9 +4,9 @@ import * as WindowSize from '../../global/window-size.js'
 function toggleModal() {
   Element.filterButton.addEventListener("click", () => {
     Element.filterButton.classList.toggle('active')
-    Element.filterModal.classList.add('open')
+    Element.filterModal.classList.toggle('open')
 
-    Element.modalOverlay.classList.remove('invisible')
+    Element.modalOverlay.classList.toggle('invisible')
   });
 
   Element.modalOverlay.addEventListener("click", () => {
