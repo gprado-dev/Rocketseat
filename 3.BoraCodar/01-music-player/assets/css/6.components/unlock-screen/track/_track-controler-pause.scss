@@ -1,0 +1,18 @@
+@include responsiveness(global) {
+  .track-controler-pause {
+    cursor: pointer;
+
+    width: 1.6rem;
+    height: 1.6rem;
+
+    background: none;
+    border: none;
+    background-image: url('../img/icons/controls-pause-focus-16.svg');
+  
+    transition: $transition-inputs-search;
+  }
+
+  .playlist-track:not(.on-play) .track-controler-pause {
+    display: none;
+  }
+}

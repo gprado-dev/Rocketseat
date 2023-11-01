@@ -1,0 +1,7 @@
+@include responsiveness(global) {
+  .cover-sm {
+    width: 6.4rem;
+    height: 6.4rem;
+    border-radius: $radius-sm;
+  }
+}

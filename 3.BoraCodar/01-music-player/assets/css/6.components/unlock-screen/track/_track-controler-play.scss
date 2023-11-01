@@ -1,0 +1,18 @@
+@include responsiveness(global) {
+  .track-controler-play {
+    cursor: pointer;
+
+    width: 1.6rem;
+    height: 1.6rem;
+
+    background: none;
+    border: none;
+    background-image: url('../img/icons/controls-play-focus-16.svg');
+  
+    transition: $transition-inputs-search;
+  }
+
+  .playlist-track:not(.on-play) .track-controler-play {
+    display: none;
+  }
+}

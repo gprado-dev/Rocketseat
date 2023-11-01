@@ -1,0 +1,16 @@
+@include responsiveness(global) {
+  .track-duration {
+    display: flex;
+    flex: 1;
+  }
+
+  .track-text-duration {
+    @include regular-callout;
+
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+  }
+}

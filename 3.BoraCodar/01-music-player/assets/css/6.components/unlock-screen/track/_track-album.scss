@@ -1,0 +1,16 @@
+@include responsiveness(global) {
+  .track-album {
+    display: flex;
+    flex: 1;
+  }
+
+  .track-text-album {
+    @include regular-callout;
+
+    word-break: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    -webkit-box-orient: vertical; 
+  }
+}

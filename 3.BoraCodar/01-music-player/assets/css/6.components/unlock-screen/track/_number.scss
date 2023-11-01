@@ -1,0 +1,13 @@
+@include responsiveness(global) {
+  .track-number {
+    width: 1.6rem;
+    height: 1.6rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include regular-caption2;
+    color: $color-gray-200;
+  }
+}

@@ -1,0 +1,30 @@
+@include responsiveness(global) {
+  .track-title {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    flex: 1;
+  }
+
+  .track-text-title {
+    @include bold-title3;
+    color: $color-gray-100;
+
+    word-break: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    -webkit-box-orient: vertical; 
+  }
+
+  .track-text-artist {
+    @include regular-footnote;
+    color: $color-gray-200;
+
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+  }
+}

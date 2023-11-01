@@ -1,0 +1,16 @@
+@include responsiveness(global) {
+  .track-release {
+    display: flex;
+    flex: 1;
+  }
+
+  .track-text-release {
+    @include regular-callout;
+
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+  }
+}

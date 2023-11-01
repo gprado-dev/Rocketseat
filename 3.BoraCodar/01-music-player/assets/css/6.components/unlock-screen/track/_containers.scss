@@ -1,0 +1,52 @@
+@include responsiveness(global) {
+  .playlist-tracks-container {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+  }
+  
+  .playlist-track {
+    border-radius: $radius-sm;
+    padding: .8rem 1.6rem;
+    
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    gap: .8rem;
+
+    color: $color-gray-300;
+
+    &:hover {
+      background: $color-primary-base;
+    }
+
+    &:focus {
+      background: $color-primary-light;
+    }
+  }
+
+  .track-controler {
+    display: flex;
+    align-items: center;
+  }
+
+  .track-data {
+    height: 6.4rem;
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    flex: 1;
+  }
+
+  .track-cover {
+    height: 6.4rem;
+  }
+}
+
+@include responsiveness(device-phone-only) {
+  
+}
+
+@include responsiveness(device-tablet-portrait) {
+  
+}

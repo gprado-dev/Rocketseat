@@ -17,8 +17,8 @@ export function toggleSearchButtonOnBlur() {
 
       if(Object.keys(Element.inputSearch()[0].value).length == 0) {
         Element.iconSearch.classList.add('invisible')
-      Element.toggleSearchButton.classList.remove('invisible');
-      Element.inputSearch()[0].classList.remove('open')  
+        Element.toggleSearchButton.classList.remove('invisible');
+        Element.inputSearch()[0].classList.remove('open')  
       }
     })
 }
