@@ -14,7 +14,14 @@
     display: -webkit-box;
     -webkit-line-clamp: 2;
     overflow: hidden;
-    -webkit-box-orient: vertical; 
+    -webkit-box-orient: vertical;
+
+    transition: $transition-inputs;
+  }
+
+  .playlist-track.on-play .track-text-title,
+  .playlist-track.on-pause .track-text-title {
+    color: $color-secondary-base;
   }
 
   .track-text-artist {

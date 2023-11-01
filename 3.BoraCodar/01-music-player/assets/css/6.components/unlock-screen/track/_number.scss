@@ -9,5 +9,16 @@
 
     @include regular-caption2;
     color: $color-gray-200;
+
+    transition: $transition-buttons;
+  }
+
+  .playlist-track:hover .track-number {
+    display: none;
+    transition: $transition-buttons;
+  }
+
+  .playlist-track.on-play .track-number {
+    display: none;
   }
 }

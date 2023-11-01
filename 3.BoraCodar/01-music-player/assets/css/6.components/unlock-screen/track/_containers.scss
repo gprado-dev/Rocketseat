@@ -16,18 +16,23 @@
 
     color: $color-gray-300;
 
+    transition: $transition-buttons;
+
     &:hover {
       background: $color-primary-base;
+      color: $color-gray-100;
     }
 
-    &:focus {
+    &.selected {
       background: $color-primary-light;
+      color: $color-gray-100;
     }
   }
 
   .track-controler {
     display: flex;
     align-items: center;
+    width: 1.6rem;
   }
 
   .track-data {

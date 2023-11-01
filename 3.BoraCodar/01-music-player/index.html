@@ -102,8 +102,8 @@
               <div class="input-wrapper" id="input-wrapper">
                 <label class="sr-only" for="search">Pesquisar</label>
                 
-                <a class="button-search" id="button-search" href="#search">
-                  <span class="sr-only">Pesquisar na Playlist</span>
+                <a class="button-search tooltip" id="button-search" href="#search">
+                  <span class="tooltipText">Buscar na playlist</span>
                 </a>
                 
                 <a class="icon-search invisible" id="icon-search" href="#search"></a>
@@ -130,14 +130,25 @@
 
           </div>
 
-          <div class="playlist-tracks-container">
+          <div class="playlist-tracks-container" id="track-list">
             <div class="playlist-track">
               <div class="track-controler">
-                <button class="track-controler-play"></button>
-                <button class="track-controler-pause"></button>
-              </div>
+                <button class="track-controler-play tooltip">
+                  <span class="tooltipText">Tocar Acorda Devinho</span>
+                </button>
 
-              <div class="track-number">1</div>
+                <button class="track-controler-pause tooltip">
+                  <span class="tooltipText">Pausar</span>
+                </button>
+
+                <div class="track-number">1</div>
+
+                <div class="track-waves">
+                  <div class="wave1"></div>
+                  <div class="wave2"></div>
+                  <div class="wave3"></div>
+                </div>
+              </div>
               
               <div class="track-data">
                 <div class="track-cover">
@@ -175,11 +186,16 @@
 
             <div class="playlist-track">
               <div class="track-controler">
-                <button class="track-controler-play"></button>
-                <button class="track-controler-pause"></button>
-              </div>
+                <button class="track-controler-play tooltip">
+                  <span class="tooltipText">Tocar Acorda Devinho</span>
+                </button>
 
-              <div class="track-number">1</div>
+                <button class="track-controler-pause tooltip">
+                  <span class="tooltipText">Pausar</span>
+                </button>
+
+                <div class="track-number">1</div>
+              </div>
               
               <div class="track-data">
                 <div class="track-cover">
@@ -187,7 +203,7 @@
                 </div>
 
                 <div class="track-title">
-                  <p class="track-text-title">Acorda Devinho Agora Mano Puta que pariu parceiro</p>
+                  <p class="track-text-title">Acorda Devinho</p>
                   <p class="track-text-artist">Banda Rocketseat</p>
                 </div>
 
@@ -209,7 +225,9 @@
                   </p>
                 </div>
 
-                <button class="track-options"></button>
+                <button class="track-options tooltip">
+                  <span class="tooltipText">Mais opções para Acorda Devinho</span>
+                </button>
               </div>
             </div>
           </div>

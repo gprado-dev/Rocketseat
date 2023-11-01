@@ -126,35 +126,6 @@ html {
   white-space: normal;
 }
 
-.tooltip {
-  position: relative;
-  display: inline-block;
-}
-.tooltip:hover .tooltipText {
-  visibility: visible;
-}
-
-.tooltipText {
-  visibility: hidden;
-  position: absolute;
-  right: -2.4rem;
-  top: calc(-100% - 1.6rem);
-  z-index: 2;
-  padding: 1.2rem;
-  background-color: #201934;
-  border: 0.1rem solid #30254D;
-  border-radius: 0.8rem;
-  color: #F2F2F3;
-  font-family: "SF Pro Text Regular";
-  font-size: 1.2rem;
-  font-weight: normal;
-  font-style: normal;
-  line-height: 1.6rem; /* 133.333% */
-  white-space: nowrap;
-  text-align: center;
-  box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.4);
-}
-
 .visible {
   display: block;
 }
@@ -204,6 +175,35 @@ html {
     gap: 2.4rem;
   }
 }
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip:hover .tooltipText {
+  visibility: visible;
+}
+
+.tooltipText {
+  visibility: hidden;
+  position: absolute;
+  right: -2.4rem;
+  top: -4.8rem;
+  z-index: 2;
+  padding: 1.2rem;
+  background-color: #201934;
+  border: 0.1rem solid #30254D;
+  border-radius: 0.8rem;
+  color: #F2F2F3;
+  font-family: "SF Pro Text Regular";
+  font-size: 1.2rem;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.6rem; /* 133.333% */
+  white-space: nowrap;
+  text-align: center;
+  box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.4);
+}
+
 .playlistControlers-filter {
   cursor: pointer;
   position: relative;
@@ -870,17 +870,21 @@ input[type=search]::placeholder {
   align-self: stretch;
   gap: 0.8rem;
   color: #7D7986;
+  transition: all 400ms;
 }
 .playlist-track:hover {
   background: #201934;
+  color: #F2F2F3;
 }
-.playlist-track:focus {
+.playlist-track.selected {
   background: #30254D;
+  color: #F2F2F3;
 }
 
 .track-controler {
   display: flex;
   align-items: center;
+  width: 1.6rem;
 }
 
 .track-data {
@@ -908,6 +912,16 @@ input[type=search]::placeholder {
   line-height: 1.3rem; /* 118.182% */
   letter-spacing: 0.066px;
   color: #BEBCC2;
+  transition: all 400ms;
+}
+
+.playlist-track:hover .track-number {
+  display: none;
+  transition: all 400ms;
+}
+
+.playlist-track.on-play .track-number {
+  display: none;
 }
 
 .track-album {
@@ -936,11 +950,13 @@ input[type=search]::placeholder {
   background: none;
   border: none;
   background-image: url("../img/icons/controls-pause-focus-16.svg");
-  transition: width 600ms;
+  transition: all 400ms;
 }
 
+.playlist-track:not(:hover) .track-controler-pause,
 .playlist-track:not(.on-play) .track-controler-pause {
   display: none;
+  transition: all 400ms;
 }
 
 .track-controler-play {
@@ -950,11 +966,13 @@ input[type=search]::placeholder {
   background: none;
   border: none;
   background-image: url("../img/icons/controls-play-focus-16.svg");
-  transition: width 600ms;
+  transition: all 400ms;
 }
 
-.playlist-track:not(.on-play) .track-controler-play {
+.playlist-track:not(:hover) .track-controler-play,
+.playlist-track.on-play .track-controler-play {
   display: none;
+  transition: all 400ms;
 }
 
 .track-duration {
@@ -1025,6 +1043,12 @@ input[type=search]::placeholder {
   -webkit-line-clamp: 2;
   overflow: hidden;
   -webkit-box-orient: vertical;
+  transition: all 100ms;
+}
+
+.playlist-track.on-play .track-text-title,
+.playlist-track.on-pause .track-text-title {
+  color: #FFCC00;
 }
 
 .track-text-artist {
@@ -1040,4 +1064,58 @@ input[type=search]::placeholder {
   -webkit-line-clamp: 1;
   overflow: hidden;
   -webkit-box-orient: vertical;
+}
+
+.playlist-track:not(.on-play) .track-waves {
+  display: none;
+}
+.playlist-track:hover .track-waves {
+  display: none;
+}
+
+.track-waves {
+  min-width: 1.6rem;
+  max-width: 1.6rem;
+  min-height: 1.6rem;
+  max-height: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 0.3rem;
+}
+
+.wave1, .wave2, .wave3 {
+  width: 0.2rem;
+  height: 0.3rem;
+  background: #FFCC00;
+  transform: scaleX(-1);
+  transition: all 100ms;
+  animation-name: audioWave;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+.wave2 {
+  animation-delay: 0.5s;
+}
+
+.wave3 {
+  animation-delay: 0.3s;
+}
+
+@keyframes audioWave {
+  0% {
+    height: 0.3rem;
+  }
+  25% {
+    height: 1.6rem;
+  }
+  50% {
+    height: 0.3rem;
+  }
+  100% {
+    height: 1.6rem;
+  }
 }/*# sourceMappingURL=styles.css.map */

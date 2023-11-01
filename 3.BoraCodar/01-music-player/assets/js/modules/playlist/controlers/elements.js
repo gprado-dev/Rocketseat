@@ -3,3 +3,9 @@ export let playButtonPlaylist = document.getElementsByClassName('playlistControl
 export let pauseButtonPlaylist = document.getElementsByClassName('playlistControlers-pause')
 
 export let randomButtonPlaylist = document.getElementsByClassName('playlistControlers-random')
+
+export let playlistTrack = document.querySelectorAll('.playlist-track')
+
+export let trackControlerPlay = document.querySelectorAll('.track-controler-play')
+
+export let trackControlerPause = document.querySelectorAll('.track-controler-pause')

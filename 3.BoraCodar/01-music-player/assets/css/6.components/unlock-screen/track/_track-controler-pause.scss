@@ -9,10 +9,13 @@
     border: none;
     background-image: url('../img/icons/controls-pause-focus-16.svg');
   
-    transition: $transition-inputs-search;
+    transition: $transition-buttons;
   }
 
-  .playlist-track:not(.on-play) .track-controler-pause {
+  .playlist-track:not(:hover) .track-controler-pause,
+  .playlist-track:not(.on-play) .track-controler-pause
+  {
     display: none;
+    transition: $transition-buttons;
   }
 }
