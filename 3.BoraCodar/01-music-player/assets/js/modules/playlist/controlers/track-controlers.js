@@ -14,6 +14,16 @@ export function trackPlayPause(track, play, pause) {
 }
 
 export function trackSelection(track, play, pause) {
+  let childrens = document.querySelectorAll("#track-list .playlist-track");
+
+  let trackSelected
+
+  for (let i = 0; i < childrens.length; i++) {
+    childrens[i].addEventListener("click", function (e) {
+          trackSelected = this
+      })
+  }
+  
   track.addEventListener("click", () => {
     track.classList.toggle('selected')
 
@@ -36,3 +46,7 @@ export function trackSelection(track, play, pause) {
 trackPlayPause(Element.playlistTrack[0], Element.trackControlerPlay[0], Element.trackControlerPause[0])
 
 trackSelection(Element.playlistTrack[0], Element.trackControlerPlay[0], Element.trackControlerPause[0])
+
+trackSelection(Element.playlistTrack[1], Element.trackControlerPlay[1], Element.trackControlerPause[1])
+
+

@@ -49,7 +49,9 @@
 }
 
 @include responsiveness(device-phone-only) {
-  
+  .playlist-tracks-container {
+    margin-top: 1.6rem;
+  }
 }
 
 @include responsiveness(device-tablet-portrait) {

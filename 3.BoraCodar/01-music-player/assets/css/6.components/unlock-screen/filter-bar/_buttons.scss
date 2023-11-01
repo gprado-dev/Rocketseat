@@ -1,0 +1,38 @@
+@include responsiveness(global) {
+  .playlist-filterBar-button {
+    cursor: pointer;
+
+    padding: .8rem .8rem .8rem 0;
+    background: none;
+    border: none;
+    color: $color-gray-300;
+    text-decoration: none;
+
+    display: flex;
+    gap: .8rem;
+    align-items: center;
+
+    transition: $transition-inputs;
+
+    &:hover {
+      color: $color-gray-100;
+    }
+
+    &.active1::after {
+      display: inline-block;
+      content: '';
+      width: 1.6rem;
+      height: 1.6rem;
+      background-image: url('../img/icons/CaretDown-active-16.svg');
+    }
+
+    &.active2::after {
+      display: inline-block;
+      content: '';
+      width: 1.6rem;
+      height: 1.6rem;
+      background-image: url('../img/icons/CaretDown-active-16.svg');
+      transform: scaleY(-1);
+    }
+  }
+}
