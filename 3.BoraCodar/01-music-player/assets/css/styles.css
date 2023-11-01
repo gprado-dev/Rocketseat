@@ -126,6 +126,35 @@ html {
   white-space: normal;
 }
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip:hover .tooltipText {
+  visibility: visible;
+}
+
+.tooltipText {
+  visibility: hidden;
+  position: absolute;
+  right: -2.4rem;
+  top: calc(-100% - 1.6rem);
+  z-index: 2;
+  padding: 1.2rem;
+  background-color: #201934;
+  border: 0.1rem solid #30254D;
+  border-radius: 0.8rem;
+  color: #F2F2F3;
+  font-family: "SF Pro Text Regular";
+  font-size: 1.2rem;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.6rem; /* 133.333% */
+  white-space: nowrap;
+  text-align: center;
+  box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.4);
+}
+
 .visible {
   display: block;
 }
