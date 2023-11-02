@@ -57,21 +57,6 @@
     &:active {
       background: $color-primary-lightest;
     }
-
-    &:hover::after {
-      display: inline-block;
-      content: '';
-  
-      position: absolute;
-      right: .8rem;
-  
-      width: 1.6rem;
-      height: 1.6rem;
-  
-      background-image: url(../img/icons/check-inactive-16.svg);
-      background-repeat: no-repeat;
-      background-position: center;
-    }
   
     &.active {
       color: $color-gray-100;

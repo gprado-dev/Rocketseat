@@ -59,7 +59,7 @@
               <p class="filter-nav-title">Classificar por</p>
               
               <div class="filter-nav-options">
-                <ul class="filter-nav-select" name="filter-nav-select" id="filter-nav-select">
+                <ul class="filter-nav-select" name="filter-nav-select">
                   <li class="filter-nav-option mobile active" value="custom-order">Ordem personalizada</option>
                   <li class="filter-nav-option mobile" value="title">Título</option>
                   <li class="filter-nav-option mobile" value="artist">Artista</li>
@@ -111,17 +111,20 @@
               </div>
               
               <div class="filter-wrapper">
-                <button class ="playlistControlers-filter desktop opt1">Ordem personalizada</button>
+                <button class ="playlistControlers-filter desktop">Ordem personalizada</button>
                 <div class="modal-overlay desktop invisible">
                 </div>
                 <div class="filter-nav desktop">
                   <p class="filter-nav-title">Classificar por</p>
                   
                   <div class="filter-nav-options">
-                    <ul class="filter-nav-select" name="filter-nav-select" id="filter-nav-select">
+                    <ul class="filter-nav-select" name="filter-nav-select">
                       <li class="filter-nav-option desktop active" value="custom-order">Ordem personalizada</option>
                       <li class="filter-nav-option desktop" value="title">Título</option>
                       <li class="filter-nav-option desktop" value="artist">Artista</li>
+                      <li class="filter-nav-option desktop" value="album">Álbum</li>
+                      <li class="filter-nav-option desktop" value="release">Lançamento</li>
+                      <li class="filter-nav-option desktop" value="duration">Duração</li>
                     </ul>
                   </div>
                 </div>
@@ -215,16 +218,22 @@
             </div>
 
             <div class="playlist-track">
-              <div class="track-controler">
-                <button class="track-controler-play tooltip">
-                  <span class="tooltipText">Tocar Acorda Devinho</span>
+              <div class="track-controler tooltip">
+                <button class="track-controler-play">
+                  <span class="tooltipText left">Tocar Acorda Devinho</span>
                 </button>
 
-                <button class="track-controler-pause tooltip">
+                <button class="track-controler-pause">
                   <span class="tooltipText">Pausar</span>
                 </button>
 
                 <div class="track-number">1</div>
+
+                <div class="track-waves">
+                  <div class="wave1"></div>
+                  <div class="wave2"></div>
+                  <div class="wave3"></div>
+                </div>
               </div>
               
               <div class="track-data">

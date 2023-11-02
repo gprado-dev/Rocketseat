@@ -272,15 +272,6 @@ html {
     background-repeat: no-repeat;
     background-position: center right;
   }
-  .playlistControlers-filter.opt1 {
-    width: 18.242rem;
-  }
-  .playlistControlers-filter.opt2 {
-    width: 8.405rem;
-  }
-  .playlistControlers-filter.opt3 {
-    width: 9.081rem;
-  }
 }
 .filter-wrapper {
   position: relative;
@@ -351,17 +342,6 @@ html {
 }
 .filter-nav-option:active {
   background: #403267;
-}
-.filter-nav-option:hover::after {
-  display: inline-block;
-  content: "";
-  position: absolute;
-  right: 0.8rem;
-  width: 1.6rem;
-  height: 1.6rem;
-  background-image: url(../img/icons/check-inactive-16.svg);
-  background-repeat: no-repeat;
-  background-position: center;
 }
 .filter-nav-option.active {
   color: #F2F2F3;
