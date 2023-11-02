@@ -1,3 +1,5 @@
+export let playlistTrackContainer = document.querySelectorAll('.playlist-tracks-container')
+
 export let playlistTrack = document.querySelectorAll('.playlist-track')
 
 export let trackControlerPlay = document.querySelectorAll('.track-controler-play')
