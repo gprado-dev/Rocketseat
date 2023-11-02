@@ -12,7 +12,16 @@
 
     transition: $transition-buttons;
   }
+}
 
+@include responsiveness(device-phone-only) {
+  .playlist-track.selected .track-number {
+    color: $color-secondary-base;
+  }
+}
+
+
+@include responsiveness(device-tablet-portrait) {
   .playlist-track:hover .track-number {
     display: none;
     transition: $transition-buttons;

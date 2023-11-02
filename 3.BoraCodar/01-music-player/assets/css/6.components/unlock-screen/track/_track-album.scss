@@ -14,3 +14,9 @@
     -webkit-box-orient: vertical; 
   }
 }
+
+@include responsiveness(device-phone-only) {
+  .track-album {
+    display: none;
+  }
+}

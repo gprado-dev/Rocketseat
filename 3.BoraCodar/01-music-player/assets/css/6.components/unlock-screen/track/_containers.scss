@@ -16,17 +16,7 @@
 
     color: $color-gray-300;
 
-    transition: $transition-buttons;
-
-    &:hover {
-      background: $color-primary-base;
-      color: $color-gray-100;
-    }
-
-    &.selected {
-      background: $color-primary-light;
-      color: $color-gray-100;
-    }
+    transition: $transition-buttons; 
   }
 
   .track-controler {
@@ -53,8 +43,22 @@
   .playlist-tracks-container {
     margin-top: 1.6rem;
   }
+
+  .playlist-track {
+    padding: .4rem 0;
+  }
 }
 
 @include responsiveness(device-tablet-portrait) {
-  
+  .playlist-track {
+    &:hover {
+      background: $color-primary-base;
+      color: $color-gray-100;
+    }
+
+    &.selected {
+      background: $color-primary-light;
+      color: $color-gray-100;
+    }
+  }
 }

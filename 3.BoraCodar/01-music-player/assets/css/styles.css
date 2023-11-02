@@ -1065,14 +1065,6 @@ input[type=search]::placeholder {
   color: #7D7986;
   transition: all 400ms;
 }
-.playlist-track:hover {
-  background: #201934;
-  color: #F2F2F3;
-}
-.playlist-track.selected {
-  background: #30254D;
-  color: #F2F2F3;
-}
 
 .track-controler {
   display: flex;
@@ -1097,6 +1089,19 @@ input[type=search]::placeholder {
   .playlist-tracks-container {
     margin-top: 1.6rem;
   }
+  .playlist-track {
+    padding: 0.4rem 0;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .playlist-track:hover {
+    background: #201934;
+    color: #F2F2F3;
+  }
+  .playlist-track.selected {
+    background: #30254D;
+    color: #F2F2F3;
+  }
 }
 .track-number {
   width: 1.6rem;
@@ -1114,15 +1119,20 @@ input[type=search]::placeholder {
   transition: all 400ms;
 }
 
-.playlist-track:hover .track-number {
-  display: none;
-  transition: all 400ms;
+@media only screen and (max-width: 599px) {
+  .playlist-track.selected .track-number {
+    color: #FFCC00;
+  }
 }
-
-.playlist-track.on-play .track-number {
-  display: none;
+@media only screen and (min-width: 600px) {
+  .playlist-track:hover .track-number {
+    display: none;
+    transition: all 400ms;
+  }
+  .playlist-track.on-play .track-number {
+    display: none;
+  }
 }
-
 .track-album {
   display: flex;
   flex: 1;
@@ -1142,6 +1152,11 @@ input[type=search]::placeholder {
   -webkit-box-orient: vertical;
 }
 
+@media only screen and (max-width: 599px) {
+  .track-album {
+    display: none;
+  }
+}
 .track-controler-pause {
   cursor: pointer;
   width: 1.6rem;
@@ -1158,6 +1173,11 @@ input[type=search]::placeholder {
   transition: all 400ms;
 }
 
+@media only screen and (max-width: 599px) {
+  .track-controler-pause {
+    display: none;
+  }
+}
 .track-controler-play {
   cursor: pointer;
   width: 1.6rem;
@@ -1174,6 +1194,11 @@ input[type=search]::placeholder {
   transition: all 400ms;
 }
 
+@media only screen and (max-width: 599px) {
+  .track-controler-play {
+    display: none;
+  }
+}
 .track-duration {
   display: flex;
   flex: 1;
@@ -1193,6 +1218,11 @@ input[type=search]::placeholder {
   -webkit-box-orient: vertical;
 }
 
+@media only screen and (max-width: 599px) {
+  .track-duration {
+    display: none;
+  }
+}
 .track-options {
   cursor: pointer;
   width: 3.2rem;
@@ -1203,6 +1233,11 @@ input[type=search]::placeholder {
   transition: width 600ms;
 }
 
+@media only screen and (max-width: 599px) {
+  .track-options {
+    display: none;
+  }
+}
 .track-release {
   display: flex;
   flex: 1;
@@ -1222,6 +1257,11 @@ input[type=search]::placeholder {
   -webkit-box-orient: vertical;
 }
 
+@media only screen and (max-width: 599px) {
+  .track-release {
+    display: none;
+  }
+}
 .track-title {
   display: flex;
   flex-direction: column;
@@ -1265,6 +1305,11 @@ input[type=search]::placeholder {
   -webkit-box-orient: vertical;
 }
 
+@media only screen and (max-width: 599px) {
+  .playlist-track.selected .track-text-title {
+    color: #FFCC00;
+  }
+}
 .playlist-track:not(.on-play) .track-waves {
   display: none;
 }

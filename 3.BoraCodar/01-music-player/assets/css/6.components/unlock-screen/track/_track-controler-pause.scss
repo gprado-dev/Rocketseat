@@ -19,3 +19,9 @@
     transition: $transition-buttons;
   }
 }
+
+@include responsiveness(device-phone-only) {
+  .track-controler-pause {
+    display: none;
+  }
+}

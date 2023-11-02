@@ -35,3 +35,9 @@
     -webkit-box-orient: vertical;
   }
 }
+
+@include responsiveness(device-phone-only) {
+  .playlist-track.selected .track-text-title {
+    color: $color-secondary-base;
+  }
+}

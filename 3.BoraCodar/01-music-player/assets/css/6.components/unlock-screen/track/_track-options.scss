@@ -12,3 +12,9 @@
     transition: $transition-inputs-search;
   }
 }
+
+@include responsiveness(device-phone-only) {
+  .track-options {
+    display: none;
+  }
+}
