@@ -1,6 +1,0 @@
-import * as Element from './elements.js'
-import * as ControlerPlay from './play-button.js'
-import * as ControlerPause from './pause-button.js'
-import * as ControlerRandom from './random-button.js'
-import * as TrackControler from './track-controlers.js'
-import * as ControlerVolume from './volume.js'

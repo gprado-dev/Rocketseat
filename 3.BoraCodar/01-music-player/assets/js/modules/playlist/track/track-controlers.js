@@ -1,5 +1,5 @@
 import * as Element from './elements.js'
-import * as Global from '../../global/elements.js'
+
 
 export function trackPlayPause(track, play, pause) {    
   play.addEventListener("click", () => {
@@ -48,5 +48,3 @@ trackPlayPause(Element.playlistTrack[0], Element.trackControlerPlay[0], Element.
 trackSelection(Element.playlistTrack[0], Element.trackControlerPlay[0], Element.trackControlerPause[0])
 
 trackSelection(Element.playlistTrack[1], Element.trackControlerPlay[1], Element.trackControlerPause[1])
-
-
