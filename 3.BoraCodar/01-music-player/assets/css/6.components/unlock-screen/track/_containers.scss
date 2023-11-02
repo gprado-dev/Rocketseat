@@ -50,6 +50,10 @@
 }
 
 @include responsiveness(device-tablet-portrait) {
+  .playlistBody {
+    height: calc(100vh);
+  }
+  
   .playlist-track {
     &:hover {
       background: $color-primary-base;

@@ -532,6 +532,7 @@ body.on-play .playlistControlers-play {
     padding-inline: 1.6rem;
     background: #201934;
     border-top: 0.2rem solid #30254D;
+    box-shadow: 0px -6px 16px 0px rgba(0, 0, 0, 0.4);
   }
   .playlistFooter-container {
     width: 100%;
@@ -1094,6 +1095,9 @@ input[type=search]::placeholder {
   }
 }
 @media only screen and (min-width: 600px) {
+  .playlistBody {
+    height: 100vh;
+  }
   .playlist-track:hover {
     background: #201934;
     color: #F2F2F3;
