@@ -1,7 +1,11 @@
 import * as Element from './elements.js'
 
 
-export function trackPlayPause(track, play, pause) {    
+export function trackPlayOrPause(group, track, play, pause) {    
+  let elSelected
+
+
+  /* OLD FUNCTION
   play.addEventListener("click", () => {
     track.classList.add('on-play')
     track.classList.remove('on-pause')
@@ -11,7 +15,8 @@ export function trackPlayPause(track, play, pause) {
     track.classList.remove('on-play')
     track.classList.add('on-pause')
   });
+  */
 }
 
 
-trackPlayPause(Element.playlistTrack[0], Element.trackControlerPlay[0], Element.trackControlerPause[0])
+trackPlayOrPause(Element.playlistTrack[0], Element.trackControlerPlay[0], Element.trackControlerPause[0])
