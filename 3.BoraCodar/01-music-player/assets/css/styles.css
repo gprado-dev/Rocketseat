@@ -272,6 +272,24 @@ html {
     background-repeat: no-repeat;
     background-position: center right;
   }
+  .playlistControlers-filter.option-1 {
+    width: 18.242rem;
+  }
+  .playlistControlers-filter.option-2 {
+    width: 8.405rem;
+  }
+  .playlistControlers-filter.option-3 {
+    width: 9.081rem;
+  }
+  .playlistControlers-filter.option-4 {
+    width: 8.853rem;
+  }
+  .playlistControlers-filter.option-5 {
+    width: 12.564rem;
+  }
+  .playlistControlers-filter.option-6 {
+    width: 10.075rem;
+  }
 }
 .filter-wrapper {
   position: relative;

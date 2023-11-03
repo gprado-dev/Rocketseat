@@ -16,7 +16,12 @@ function clicked() {
 
         optionSelected.classList.toggle('active')
 
-        Element.filterButtonDesktop.style.transition = 'all 100ms'
+        for (let i = 0; i < Element.filterOptions[0].length; i++) {
+          Element.filterButtonDesktop.classList.remove(`option-${i+1}`)
+        }
+        
+        Element.filterButtonDesktop.classList.add(`option-${i+1}`)
+
       })
   }
 } 
