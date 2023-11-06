@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!-- start -->
+<head>
+  <!-- preconect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- metadata -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Github favorites">
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./assets/img/favicon.svg" type="image/x-icon">
+
+  <!-- title -->
+  <title>Github Favorites</title>
+
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- css -->
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<!-- viewport -->
+<body>
+  <!-- app -->
+  <div id="app">
+    <!-- header -->
+    <header>
+      <!-- title -->
+      <h1>Github Favorites</h1>
+
+      <!-- input -->
+      <div class="search">
+        <label class="sr-only" for="git-user">Github user</label>
+        <input type="	text" placeholder="Github user" id="git-user">
+        <button>&plus;</button>
+      </div>
+
+    </header>
+
+    <!-- table -->
+    <div class="table">
+      <table>
+
+        <!-- head -->
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Repositories</th>
+            <th>Followers</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <!-- body -->
+        <tbody>
+          <tr>
+            <!-- user -->
+            <td class="user">
+              <img src="https://github.com/gprado-dev.png" alt="Imagem de Gustavo Prado">
+              <a href="https://github.com/gprado-dev" target="_blank">
+                <p>User name</p>
+                <span>User ID</span>
+              </a>
+            </td>
+            <!-- repositories -->
+            <td class="repositories">76</td>
+            <!-- followers -->
+            <td class="followers">9589</td>
+            <!-- del button -->
+            <td class="button"><button class="remove">&times;</button></td>
+          </tr>
+
+          <tr>
+            <!-- user -->
+            <td class="user">
+              <img src="https://github.com/gprado-dev.png" alt="Imagem de Gustavo Prado">
+              <a href="https://github.com/gprado-dev" target="_blank">
+                <p>User name</p>
+                <span>User ID</span>
+              </a>
+            </td>
+            <!-- repositories -->
+            <td class="repositories">76</td>
+            <!-- followers -->
+            <td class="followers">9589</td>
+            <!-- del button -->
+            <td class="button"><button class="remove">&times;</button></td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+  <!-- end -->
+  </div>
+
+  <!-- javascript -->
+  <script src="./assets/js/main.js" type="module"></script>
+</body>
+<!-- end -->
+</html>
