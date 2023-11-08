@@ -14,6 +14,7 @@
   --hue: 194;
   --primary-color: hsl(var(--hue), 100%, 63%);
   --secondary-color: hsl(var(--hue), 100%, 10%);
+  --tertiary-color: hsl(var(--hue), 72%, 13%);
   --table-stroke-color: hsl(var(--hue), 30%, 45%);
   --table-odd-row-color: hsl(var(--hue), 65%, 7%);
   --table-even-row-color: hsl(var(--hue), 75%, 9%);
@@ -126,8 +127,8 @@ table * {
 }
 
 table th {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
+  background-color: var(--tertiary-color);
+  color: var(--text-color);
   text-align: left;
   padding: 1.6rem;
 
