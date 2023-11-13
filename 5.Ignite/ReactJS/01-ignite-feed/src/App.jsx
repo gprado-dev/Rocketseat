@@ -5,7 +5,6 @@ import { Header } from './components/Header.jsx'
 import { Sidebar } from './components/Sidebar.jsx'
 import { Post } from './components/Post.jsx'
 
-
 export function App() {
 
   return (
