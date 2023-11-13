@@ -1,10 +1,19 @@
 .header {
   background: var(--gray-800);
   display: flex;
+  align-items: center;
   justify-content: center;
   padding-block: 2.4rem;
+  gap: 1rem;
 }
 
 .header img {
   height: 3.2rem;
+}
+
+.header p {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--gray-100);
+  line-height: 1.6;
 }
